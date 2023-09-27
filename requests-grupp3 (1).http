@@ -11,14 +11,34 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Toast skagen 3",
+    "title": "Toast skagen",
     "description": "Gott till champagne",
     "ratings": [],
-    "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223427/cf_259/korvstroganoff_med_ris.jpg",
-    "timeInMins": 15,
-    "categories": [ "Förrätt", "Skaldjur", "Smaskigt" ],
+    "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_67954/cf_259/toast_skagen_med_hemmagjord_majonnas.jpg",
+    "timeInMins": 20,
+    "categories": [ "Förrätt", "Skaldjur", "Frukost", "Lunch", "Middag" ],
     "instructions": [ "Stek brödet", "Lägg på röran", "Toppa med Dill"],
     "ingredients": [
+        {
+            "name": "Räkor",
+            "amount": 500,
+            "unit": "gram"
+        },
+        {
+            "name": "Dill",
+            "amount": 1,
+            "unit": "kruka"
+        },
+        {
+            "name": "Majonäs",
+            "amount": 1.5,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Citron",
+            "amount": 1,
+            "unit": "hel"
+        },
         {
             "name": "Salt",
             "amount": 1,
@@ -30,8 +50,13 @@ Content-Type: application/json
             "unit": "tsk"
         },
         {
-            "name": "Smör",
-            "amount": 100,
+            "name": "Bröd",
+            "amount": 2,
+            "unit": "skivor"
+        },
+        {
+            "name": "Löjrom",
+            "amount": 80,
             "unit": "gram"
         }
     ]
@@ -44,23 +69,189 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Bruscetta",d
-    "description": "Att börja med",
-    "ratings": [2, 3, 4, 1, 2, 3],
-    "imageUrl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223427/cf_259/korvstroganoff_med_ris.jpg",
-    "timeInMins": 15,
-    "categories": [ "Förrätt", "Italienskt" ],
-    "instructions": [ "Stek brödet", "Hacka tomater och Mozarella", "Lägg på brödet"],
+    "title": "Tacos",
+    "description": "Fredagsmys",
+    "ratings": [4, 5, 4, 4, 5, 4],
+    "imageUrl": "https://res.cloudinary.com/anora/image/upload/t_OgImage-MD-MD/f_auto/folkofolk%2Ftacos-texmex",
+    "timeInMins": 30,
+    "categories": [ "Lunch", "Middag" ],
+    "instructions": [ "Sätt på ugnen", "Hacka grönsaker", "Stek färsen"],
     "ingredients": [
-        {
-            "name": "Bröd",
-            "amount": 1,
-            "unit": "skiva"
-        },
         {
             "name": "Tomat",
             "amount": 2,
             "unit": "stycken"
+        },
+        {
+            "name": "Gurka",
+            "amount": 1,
+            "unit": "stycken"
+        },
+        {
+            "name": "Lök",
+            "amount": 1,
+            "unit": "stycken"
+        },
+        {
+            "name": "Majskorn",
+            "amount": 1,
+            "unit": "burk"
+        },
+        {
+            "name": "Isbergssallad",
+            "amount": 1.25,
+            "unit": "stycken"
+        },
+        {
+            "name": "Nötfärs",
+            "amount": 500,
+            "unit": "gram"
+        },
+        {
+            "name": "Olja",
+            "amount": 2,
+            "unit": "msk"
+        },
+        {
+            "name": "Tacokrydda",
+            "amount": 1,
+            "unit": "påse"
+        },
+        {
+            "name": "Vatten",
+            "amount": 1.5,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Tacobröd",
+            "amount": 4,
+            "unit": "stycken"
+        },
+        {
+            "name": "Riven ost",
+            "amount": 2,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Salsa",
+            "amount": 2,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Gräddfil",
+            "amount": 2,
+            "unit": "deciliter"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Tabbouleh",
+    "description": "Passar utmärkt som tillbehör till grillat eller på en buffé",
+    "ratings": [3, 5, 3, 4, 5, 2],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flickr_-_cyclonebill_-_Tabbouleh.jpg",
+    "timeInMins": 25,
+    "categories": [ "Lunch", "Middag", "Sallad"],
+    "instructions": [ "Koka bulgur", "Finhacka persilja och lök, tärna tomaterna", "Blanda ingredienserna", "Blanda ingredienserna"],
+    "ingredients": [
+        {
+            "name": "Bulgur",
+            "amount": 1,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Bladpersilja",
+            "amount": 100,
+            "unit": "gram"
+        },
+        {
+            "name": "Lök",
+            "amount": 1,
+            "unit": "stycken"
+        },
+        {
+            "name": "Tomat",
+            "amount": 3,
+            "unit": "stycken"
+        },
+        {
+            "name": "Citronjuice",
+            "amount": 0.75,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Olivolja",
+            "amount": 1,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Salt",
+            "amount": 1,
+            "unit": "tsk"
+        },
+        {
+            "name": "Peppar",
+            "amount": 2,
+            "unit": "krm"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Kladdkaka",
+    "description": "Snabb, enkel och god",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://cdn-rdb.arla.com/Files/arla-se/2806554286/75c9f5fb-375f-41b8-8c89-e7cbfb9c0278.jpg?w=1269&h=715&mode=crop&ak=f525e733&hm=b762ca1a",
+    "timeInMins": 30,
+    "categories": [ "Efterrät"],
+    "instructions": [ "Sätt på ugnen", "Smält smöret", "Rör ner ingredienserna och blanda väl", "Häll smeten i en smord och bröad form", "Grädda i 15 minuter"],
+    "ingredients": [
+        {
+            "name": "Smör",
+            "amount": 100,
+            "unit": "gram"
+        },
+        {
+            "name": "Strösocker",
+            "amount": 225,
+            "unit": "gram"
+        },
+        {
+            "name": "Ägg",
+            "amount": 2,
+            "unit": "stycken"
+        },
+        {
+            "name": "Vetemjöl",
+            "amount": 1,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Kakao",
+            "amount": 3,
+            "unit": "msk"
+        },
+        {
+            "name": "Vaniljsocker",
+            "amount": 1,
+            "unit": "tsk"
+        },
+        {
+            "name": "Vispgrädde",
+            "amount": 3,
+            "unit": "deciliter"
         }
     ]
 }

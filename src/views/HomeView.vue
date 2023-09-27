@@ -78,7 +78,7 @@ export default {
 
 <style scoped>
 .recipe-image {
-  width: 200px;
+  width: 400px;
   height: auto;
 }
 </style>
