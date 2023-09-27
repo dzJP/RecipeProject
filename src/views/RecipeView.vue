@@ -1,29 +1,49 @@
-<!-- This component is responsible for displaying detailed information about a single recipe. (Child component to RecipesList.vue)
-It receives the selected recipe as a prop and displays its title, description, comments, and rating. -->
 <template>
-  <div class="recipe-view">
-    <h2>{{ recipe.title }}</h2>
-    <p>{{ recipe.description }}</p>
-    <CommentSection :comments="recipe.comments" />
-    <RatingComponent :rating="recipe.rating" />
+  <div>
+    <h1>Recipe Page</h1>
+    <div v-if="loading">Loading...</div>
+    <div v-else>
+      <h2>{{ recipe.title }}</h2>
+      <img :src="recipe.imageUrl" alt="Recipe Image" />
+      <div>Rating: {{ recipe.avgRating || 'N/A' }}</div>
+      <div>Ingredients: {{ recipe.ingredients.length }}</div>
+      <div>Time: {{ recipe.timeInMins }} mins</div>
+      <div>Category: {{ recipe.categories.join(', ') }}</div>
+      <h3>Instructions</h3>
+      <ul>
+        <li v-for="(step, index) in recipe.instructions" :key="index">
+          {{ step }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-import CommentSection from '@/components/CommentSection.vue';
-import RatingComponent from '@/components/RatingComponent.vue';
-
 export default {
-  components: {
-    CommentSection,
-    RatingComponent,
+  data() {
+    return {
+      loading: true,
+      recipe: {}
+    };
   },
-  props: {
-    recipe: Object,
-  },
+  created() {
+    const recipeId = this.$route.params.recipeId;
+
+    fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes/${recipeId}`)
+      .then(response => response.json())
+      .then(data => {
+        this.recipe = data;
+        this.loading = false;
+      })
+      .catch(error => {
+        console.error('Error fetching recipe:', error);
+        this.loading = false;
+      });
+  }
 };
 </script>
 
 <style scoped>
-/* Add any specific styles for RecipeView */
+/* Add CSS styles specific to the recipe view component */
 </style>

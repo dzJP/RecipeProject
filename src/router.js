@@ -1,13 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import RecipeView from './views/RecipeView.vue'; // Import RecipeView
-import HomeView from './views/HomeView.vue'; // Import HomeView
-import CategoryView from './views/CategoryView.vue'; // Import CategoryView
+import RecipesList from './views/RecipesList.vue';
+import RecipeView from './views/RecipeView.vue';
+import CategoryView from './views/CategoryView.vue';
+import HomeView from './views/HomeView.vue';
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView, // Change component to HomeView
+    component: HomeView,
   },
   {
     path: '/recipe/:recipeId',
@@ -15,9 +16,14 @@ const routes = [
     component: RecipeView,
   },
   {
-    path: '/category/:categoryId', // Define route for category view
+    path: '/category/:categoryId',
     name: 'category',
-    component: CategoryView, // Use CategoryView component
+    component: CategoryView,
+  },
+  {
+    path: '/recipes',
+    name: 'recipes',
+    component: RecipesList,
   },
 ];
 
