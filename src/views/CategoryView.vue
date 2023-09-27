@@ -1,12 +1,16 @@
 <template>
   <div>
     <h1>Category Page</h1>
-    <ul>
-      <!-- Loop through the recipes in this category and display them -->
-      <li v-for="recipe in recipes" :key="recipe.id">
-        <router-link :to="'/recipe/' + recipe.id">{{ recipe.title }}</router-link>
-      </li>
-    </ul>
+    <div v-if="loading">Loading...</div>
+    <div v-else>
+      <ul>
+        <li v-for="recipe in recipes" :key="recipe.id">
+          <router-link :to="'/recipe/' + recipe.id">
+            {{ recipe.title }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -14,13 +18,24 @@
 export default {
   data() {
     return {
-      recipes: [
-        { id: 1, title: 'Recipe 1' },
-        { id: 2, title: 'Recipe 2' },
-        // Add more recipes as needed
-      ],
+      loading: true,
+      recipes: []
     };
   },
+  created() {
+    const categoryId = this.$route.params.categoryId;
+
+    fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/categories/${categoryId}/recipes`)
+      .then(response => response.json())
+      .then(data => {
+        this.recipes = data;
+        this.loading = false;
+      })
+      .catch(error => {
+        console.error('Error fetching recipes:', error);
+        this.loading = false;
+      });
+  }
 };
 </script>
 

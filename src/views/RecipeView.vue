@@ -1,8 +1,9 @@
+<!-- This component is responsible for displaying detailed information about a single recipe. (Child component to RecipesList.vue)
+It receives the selected recipe as a prop and displays its title, description, comments, and rating. -->
 <template>
   <div class="recipe-view">
     <h2>{{ recipe.title }}</h2>
     <p>{{ recipe.description }}</p>
-    <!-- Add more details about the recipe as needed -->
     <CommentSection :comments="recipe.comments" />
     <RatingComponent :rating="recipe.rating" />
   </div>
@@ -18,7 +19,7 @@ export default {
     RatingComponent,
   },
   props: {
-    recipe: Object, // Assuming you'll pass a recipe object to this component
+    recipe: Object,
   },
 };
 </script>

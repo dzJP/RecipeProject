@@ -1,14 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
-// Import your components/views here
-import Home from './views/HomeView.vue';
-import Recipe from './views/RecipeView.vue';
-import Category from './views/CategoryView.vue';
+import RecipeView from './views/RecipeView.vue'; // Import RecipeView
+import HomeView from './views/HomeView.vue'; // Import HomeView
+import CategoryView from './views/CategoryView.vue'; // Import CategoryView
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/recipe/:recipeId', component: Recipe }, // Add dynamic route parameter for recipeId
-  { path: '/category/:categoryId', component: Category }, // Add dynamic route parameter for categoryId
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView, // Change component to HomeView
+  },
+  {
+    path: '/recipe/:recipeId',
+    name: 'recipe',
+    component: RecipeView,
+  },
+  {
+    path: '/category/:categoryId', // Define route for category view
+    name: 'category',
+    component: CategoryView, // Use CategoryView component
+  },
 ];
 
 const router = createRouter({
