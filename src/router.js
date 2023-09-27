@@ -1,14 +1,14 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import RecipesList from './views/RecipesList.vue';
-import RecipeView from './views/RecipeView.vue';
-import CategoryView from './views/CategoryView.vue';
-import HomeView from './views/HomeView.vue';
+import { createRouter, createWebHistory } from 'vue-router'; // Import necessary functions from vue-router
+import RecipesList from './views/RecipesList.vue'; // Import the RecipesList component
+import RecipeView from './views/RecipeView.vue'; // Import the RecipeView component
+import CategoryView from './views/CategoryView.vue'; // Import the CategoryView component
+import HomeView from './views/HomeView.vue'; // Import the HomeView component
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView,
+    path: '/', // Define the path for the route
+    name: 'home', // Assign a name to the route
+    component: HomeView, // Specify the component to be rendered
   },
   {
     path: '/recipe/:recipeId',
@@ -28,8 +28,8 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+  history: createWebHistory(), // Create a web history for the router
+  routes, // Pass the defined routes to the router
 });
 
-export default router;
+export default router; // Export the configured router
