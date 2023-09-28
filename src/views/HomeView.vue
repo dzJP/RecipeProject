@@ -1,33 +1,41 @@
 <template>
-  <div>
-    <!-- Search input field with two-way data binding -->
-    <input v-model="searchQuery" @input="searchRecipes" placeholder="Search recipes..." />
+  <div class="flex-box">
 
-    <!-- If categories are available, display them as links -->
-    <div v-if="categories.length > 0">
-      <div v-for="category in categories" :key="category.name">
-        <router-link :to="'/category/' + category.name">
-          {{ category.name }} ({{ category.recipeCount }} recipes)
-        </router-link>
+    <div class="navbar">
+      <!-- If categories are available, display them as links -->
+      <div v-if="categories.length > 0">
+        <div v-for="category in categories" :key="category.name">
+          <router-link :to="'/category/' + category.name">
+            {{ category.name }} ({{ category.recipeCount }} recipes)
+          </router-link>
+        </div>
       </div>
     </div>
 
-    <!-- Display loading message while data is being fetched -->
-    <div v-if="loading">Loading...</div>
+    <div class="searchbar">
+      <!-- Search input field with two-way data binding -->
+      <input v-model="searchQuery" @input="searchRecipes" placeholder="Search recipes..." />
+    </div>
 
-    <!-- Once data is loaded, display the list of recipes -->
-    <div v-else>
-      <!-- Loop through unique recipes after filtering -->
-      <div v-for="recipe in filteredRecipes" :key="recipe._id">
-        <!-- Display recipe details -->
-        <h2>{{ recipe.title }}</h2>
-        <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
-        <div>Rating: {{ recipe.avgRating || 'N/A' }}</div>
-        <div>Ingredients: {{ recipe.ingredients.length }}</div>
-        <div>Time: {{ recipe.timeInMins }} mins</div>
-        <div>Category: {{ recipe.categories.join(', ') }}</div>
+    <div class="big-recipes-container">
+      <!-- Display loading message while data is being fetched -->
+      <div v-if="loading">Loading...</div>
+
+      <!-- Once data is loaded, display the list of recipes -->
+      <div v-else>
+        <!-- Loop through unique recipes after filtering -->
+        <div v-for="recipe in filteredRecipes" :key="recipe._id" class="recipe-container">
+          <!-- Display recipe details -->
+          <h2>{{ recipe.title }}</h2>
+          <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
+          <div>Rating: {{ recipe.avgRating || 'N/A' }}</div>
+          <div>Ingredients: {{ recipe.ingredients.length }}</div>
+          <div>Time: {{ recipe.timeInMins }} mins</div>
+          <div>Category: {{ recipe.categories.join(', ') }}</div>
+        </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -100,5 +108,30 @@ export default {
 .recipe-image {
   width: 400px;
   height: auto;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.searchbar input {
+  height: 30px;
+}
+
+.navbar {
+  border: 1px solid black;
+  width: 20%;
+  background-color: blanchedalmond;
+}
+
+.big-recipes-container {
+  border: 1px solid black;
+  justify-content: center;
+  background-color: rgb(150, 146, 140);
+}
+
+.recipe-container {
+  border: 1px solid black;
+  background-color: rgb(172, 135, 169);
 }
 </style>
