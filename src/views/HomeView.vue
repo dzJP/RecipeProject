@@ -1,16 +1,22 @@
 <template>
   <div>
-    <!-- Page Title -->
-    <h1>Home Page</h1>
+    <!-- Search input field with two-way data binding -->
+    <input v-model="searchQuery" @input="searchRecipes" placeholder="Search recipes..." />
+
+    <!-- If categories are available, display them as links -->
+    <div v-if="categories.length > 0">
+      <div v-for="category in categories" :key="category.name">
+        <router-link :to="'/category/' + category.name">
+          {{ category.name }} ({{ category.recipeCount }} recipes)
+        </router-link>
+      </div>
+    </div>
 
     <!-- Display loading message while data is being fetched -->
     <div v-if="loading">Loading...</div>
 
-    <!-- Once data is loaded, display the search input and list of recipes -->
+    <!-- Once data is loaded, display the list of recipes -->
     <div v-else>
-      <!-- Search input field with two-way data binding -->
-      <input v-model="searchQuery" @input="searchRecipes" placeholder="Search recipes..." />
-
       <!-- Loop through unique recipes after filtering -->
       <div v-for="recipe in filteredRecipes" :key="recipe._id">
         <!-- Display recipe details -->
@@ -20,20 +26,6 @@
         <div>Ingredients: {{ recipe.ingredients.length }}</div>
         <div>Time: {{ recipe.timeInMins }} mins</div>
         <div>Category: {{ recipe.categories.join(', ') }}</div>
-      </div>
-
-      <!-- If categories are available, display them as links -->
-      <div v-if="categories.length > 0">
-        <div v-for="category in categories" :key="category.name">
-          <router-link :to="'/category/' + category.name">
-            {{ category.name }} ({{ category.recipeCount }} recipes)
-          </router-link>
-        </div>
-      </div>
-
-      <!-- If no categories are available, display a message -->
-      <div v-else>
-        No categories available.
       </div>
     </div>
   </div>
