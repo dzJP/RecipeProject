@@ -164,6 +164,74 @@ Content-Type: application/json
 }
 
 ###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Nalesniki(Polish Pancakes)",
+    "description": "Your house is going to smell like apples and cinnamon for 2 weeks.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://ilovebake.pl/wp-content/uploads/2015/01/nalesniki-z-jablkami-i-cynamonem-9.jpg",
+    "timeInMins": 30,
+    "categories": [ "Europe"],
+    "instructions": [ "placeholder", "asdqwerty", "kurwabecausepoland"],
+    "ingredients": [
+        {
+            "name": "Vetemjöl",
+            "amount": 2.1,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Ägg",
+            "amount": 3,
+            "unit": "stycken"
+        },
+        {
+            "name": "Vatten(ljummen)",
+            "amount": 2.5,
+            "unit": "dl"
+        },
+        {
+            "name": "Mjölk(ljummen)",
+            "amount": 1.25,
+            "unit": "deciliter"
+        },
+        {
+            "name": "Smör",
+            "amount": 100,
+            "unit": "gram"
+        },
+        {
+            "name": "Socker",
+            "amount": 1,
+            "unit": "msk"
+        },
+        {
+            "name": "Äpple",
+            "amount": 3,
+            "unit": "stycken"
+        },
+        {
+            "name": "Vaniljextrakt",
+            "amount": 0.5,
+            "unit": "msk"
+        },
+        {
+            "name": "Kanel",
+            "amount": 1,
+            "unit": "msk"
+        },
+        {
+            "name": "Strösocker",
+            "amount": 2,
+            "unit": "msk"
+        }
+    ]
+}
+
+###
 # Söker bland alla recept
 GET {{baseUrl}}/recipes?query=toas HTTP/1.1
 
