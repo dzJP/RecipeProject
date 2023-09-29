@@ -1,6 +1,5 @@
 <template>
-  <div class="flex-box">
-
+  <div class="grid-box">
     <div class="navbar">
       <!-- If categories are available, display them as links -->
       <div v-if="categories.length > 0">
@@ -17,12 +16,11 @@
       <input v-model="searchQuery" @input="searchRecipes" placeholder="Search recipes..." />
     </div>
 
-    <div class="big-recipes-container">
       <!-- Display loading message while data is being fetched -->
-      <div v-if="loading">Loading...</div>
+      <div v-if="loading" class="big-recipes-container">Loading...</div>
 
       <!-- Once data is loaded, display the list of recipes -->
-      <div v-else>
+      <div v-else class="big-recipes-container">
         <!-- Loop through unique recipes after filtering -->
         <div v-for="recipe in filteredRecipes" :key="recipe._id" class="recipe-container">
           <!-- Display recipe details -->
@@ -34,7 +32,6 @@
           <div>Category: {{ recipe.categories.join(', ') }}</div>
         </div>
       </div>
-    </div>
 
   </div>
 </template>
@@ -105,33 +102,48 @@ export default {
 
 <style scoped>
 /* Add CSS styles specific to the HomeView component */
+
+.grid-box {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 30px 1fr;
+}
+
 .recipe-image {
   width: 400px;
   height: auto;
 }
-
-.flex-box {
-  display: flex;
+.searchbar {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 .searchbar input {
-  height: 30px;
+  width:100%;
+  height: 20px;
 }
 
 .navbar {
-  border: 1px solid black;
-  width: 20%;
-  background-color: blanchedalmond;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  background-color: rgb(145, 148, 158);
 }
 
 .big-recipes-container {
-  border: 1px solid black;
-  justify-content: center;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  display: flex;
+
   background-color: rgb(150, 146, 140);
+  border: 1px solid black;
 }
 
 .recipe-container {
+  flex-basis: 100%;
+  border-radius: 10px;
+  background-color: rgb(183, 211, 207);
   border: 1px solid black;
-  background-color: rgb(172, 135, 169);
 }
 </style>
