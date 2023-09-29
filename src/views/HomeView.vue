@@ -8,6 +8,7 @@
     </div>
 
     <div class="navbar">
+      
       <!-- If categories are available, display them as links -->
       <div v-if="categories.length > 0">
         <div v-for="category in categories" :key="category.name">
@@ -16,6 +17,7 @@
           </router-link>
         </div>
       </div>
+
     </div>
 
     <div class="searchbar">
