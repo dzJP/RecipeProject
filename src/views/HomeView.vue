@@ -1,6 +1,7 @@
 <template>
   <div class="grid-box">
 
+    <!-- Header box for heading and subtext -->
     <div class ="header">
         <h1>Lorem ipsum dolor</h1>
         <p>Sit amet, consectetur adipisicing elit. Dolorem cupiditate quo rerum hic adipisci, obcaecati architecto eligendi qui dolore veritatis non porro enim repellat magni delectus vero provident aperiam placeat.</p>
@@ -19,7 +20,7 @@
 
     <div class="searchbar">
       <!-- Search input field with two-way data binding -->
-      <input v-model="searchQuery" @input="searchRecipes" placeholder="Search recipes..." />
+      <input v-model="searchQuery" @input="searchRecipes" id="search-field" placeholder="Search recipes..." />
     </div>
 
       <!-- Display loading message while data is being fetched -->
@@ -153,13 +154,9 @@ export default {
   grid-row: 3 / 4;
 
   display: grid;
-  padding: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 0.5rem;
-
-  background-color: rgb(150, 146, 140);
-  border: 1px solid black;
 }
 
 .big-recipes-container > * {
