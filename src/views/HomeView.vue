@@ -2,7 +2,7 @@
     <div class="grid-box">
         <HeaderComponent />
         <NavbarComponent :categories="categories" />
-        <SearchComponent v-model="searchQuery" />
+        <SearchComponent v-model="searchQuery" @search="handleSearch" />
         <div v-if="loading" class="big-recipes-container">Loading...</div>
         <RecipesContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
     </div>
@@ -29,6 +29,7 @@ export default {
             searchQuery: '',
         };
     },
+
     computed: {
         uniqueRecipes() {
             const uniqueTitles = [...new Set(this.recipes.map(recipe => recipe.title))];
@@ -38,6 +39,11 @@ export default {
             return this.uniqueRecipes.filter(recipe =>
                 recipe.title.toLowerCase().includes(this.searchQuery.toLowerCase())
             );
+        },
+    },
+    methods: {
+        handleSearch(query) {
+            this.searchQuery = query;
         },
     },
     created() {
