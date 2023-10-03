@@ -1,6 +1,6 @@
 <template>
     <div class="big-recipes-container">
-        <div v-for="recipe in filteredRecipes" :key="recipe._id" class="recipe-container">
+        <div v-for="recipe in filteredRecipes" :key="recipe._id">
             <h2>{{ recipe.title }}</h2>
             <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
             <div>Rating: {{ recipe.avgRating || 'N/A' }}</div>
@@ -10,24 +10,23 @@
         </div>
     </div>
 </template>
-  
+
 <script>
 export default {
     props: ['recipes', 'searchQuery'],
     computed: {
-        uniqueRecipes() {
-            const uniqueTitles = [...new Set(this.recipes.map(recipe => recipe.title))];
-            return uniqueTitles.map(title => this.recipes.find(recipe => recipe.title === title));
-        },
         filteredRecipes() {
-            return this.uniqueRecipes.filter(recipe =>
-                recipe.title.toLowerCase().includes(this.searchQuery.toLowerCase())
-            );
+            if (Array.isArray(this.recipes)) {
+                return this.recipes.filter(recipe =>
+                    recipe.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+                );
+            }
+            return [];
         },
     },
 };
 </script>
-  
+
 <style scoped>
 .big-recipes-container {
     grid-column: 2 / 3;
@@ -49,6 +48,3 @@ export default {
     height: auto;
 }
 </style>
-
-  
-  

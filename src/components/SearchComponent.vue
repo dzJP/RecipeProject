@@ -3,7 +3,7 @@
         <input v-model="searchQuery" id="search-field" placeholder="Search recipes..." />
     </div>
 </template>
-  
+
 <script>
 export default {
     data() {
