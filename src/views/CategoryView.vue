@@ -1,10 +1,10 @@
 <template>
-	<div class="grid-box">
+    <div class="grid-box">
 		<HeaderComponent />
 		<NavbarComponent :categories="categories" />
-		<SearchComponent v-model="searchQuery" />
-		<RecipesContainerComponent v-if="!loading" :recipes="filteredRecipes" :searchQuery="searchQuery" />
-		<div v-else class="big-recipes-container">Loading...</div>
+		<SearchComponent v-model="searchQuery" @search="handleSearch" />
+		<div v-if="loading" class="big-recipes-container">Loading...</div>
+		<RecipesContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
 	</div>
 </template>
   
@@ -41,44 +41,47 @@ export default {
 			);
 		},
 	},
+	methods: {
+		handleSearch(query) {
+			this.searchQuery = query;
+		},
+		fetchCategoryRecipes() {
+			this.loading = true;
+			fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/categories/${this.categoryId}/recipes`)
+				.then(response => response.json())
+				.then(data => {
+					this.recipes = data;
+					this.loading = false;
+				})
+				.catch(error => {
+					console.error('Error fetching recipes:', error);
+					this.loading = false;
+				});
+		},
+	},
 	created() {
-    this.categoryId = this.$route.params.categoryId;
+		this.categoryId = this.$route.params.categoryId;
 
-    this.fetchRecipes(); 
+		this.fetchCategoryRecipes();
 
-    fetch('https://jau22-recept-grupp3-j35j900nj4w3.reky.se/categories')
-      .then(response => response.json())
-      .then(data => {
-        this.categories = data.map(category => ({
-          name: category.name,
-          recipeCount: category.count || 0,
-        }));
-      })
-      .catch(error => {
-        console.error('Error fetching categories:', error);
-      });
-  },
-  watch: {
-    '$route.params.categoryId': function(newCategoryId) {
-      this.categoryId = newCategoryId;
-      this.fetchRecipes(); 
-    },
-  },
-  methods: {
-    fetchRecipes() {
-      this.loading = true;
-      fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/categories/${this.categoryId}/recipes`)
-        .then(response => response.json())
-        .then(data => {
-          this.recipes = data;
-          this.loading = false;
-        })
-        .catch(error => {
-          console.error('Error fetching recipes:', error);
-          this.loading = false;
-        });
-    },
-  },
+		fetch('https://jau22-recept-grupp3-j35j900nj4w3.reky.se/categories')
+			.then(response => response.json())
+			.then(data => {
+				this.categories = data.map(category => ({
+					name: category.name,
+					recipeCount: category.count || 0,
+				}));
+			})
+			.catch(error => {
+				console.error('Error fetching categories:', error);
+			});
+	},
+	watch: {
+		'$route.params.categoryId': function (newCategoryId) {
+			this.categoryId = newCategoryId;
+			this.fetchCategoryRecipes();
+		},
+	},
 };
 </script>
   

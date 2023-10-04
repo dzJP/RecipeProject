@@ -30,23 +30,22 @@
     </main>
 </template>
   
-<script>
-export default {
+  <script>
+  export default {
     props: ['recipes', 'searchQuery'],
     computed: {
-        uniqueRecipes() {
-            const uniqueTitles = [...new Set(this.recipes.map(recipe => recipe.title))];
-            return uniqueTitles.map(title => this.recipes.find(recipe => recipe.title === title));
-        },
-        filteredRecipes() {
-            return this.uniqueRecipes.filter(recipe =>
-                recipe.title.toLowerCase().includes(this.searchQuery.toLowerCase())
-            );
-        },
+      filteredRecipes() {
+        if (Array.isArray(this.recipes)) {
+          return this.recipes.filter(recipe =>
+            recipe.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+          );
+        }
+        return [];
+      },
     },
-};
-</script>
-  
+  };
+  </script>
+
 <style scoped>
 .big-recipes-container {
     display: flex;
@@ -109,6 +108,4 @@ export default {
     
 }
 </style>
-
-  
   
