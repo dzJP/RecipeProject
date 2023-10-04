@@ -2,24 +2,31 @@
     <div class="grid-box">
         <HeaderComponent />
         <NavbarComponent :categories="categories" />
-        <SearchComponent v-model="searchQuery" />
-        <div v-if="loading" class="big-recipes-container">Loading...</div>
-        <RecipesContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
+        <SearchComponent v-model="searchQuery" @search="handleSearch" />
+        <LoadingComponent v-if="loading" />
+        <RecipeContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
+        <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
+        <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
     </div>
 </template>
-  
 <script>
 import HeaderComponent from '../components/HeaderComponent.vue';
 import NavbarComponent from '../components/NavbarComponent.vue';
 import SearchComponent from '../components/SearchComponent.vue';
-import RecipesContainerComponent from '../components/RecipesContainerComponent.vue';
+import RecipeContainerComponent from '../components/RecipesContainerComponent.vue';
+import LoadingComponent from '../components/LoadingComponent.vue';
+import FetchRecipesComponent from '../components/FetchRecipesComponent.vue';
+import FetchCategoriesComponent from '../components/FetchCategoriesComponent.vue';
 
 export default {
     components: {
         HeaderComponent,
         NavbarComponent,
         SearchComponent,
-        RecipesContainerComponent,
+        RecipeContainerComponent,
+        LoadingComponent,
+        FetchRecipesComponent,
+        FetchCategoriesComponent,
     },
     data() {
         return {
@@ -29,45 +36,24 @@ export default {
             searchQuery: '',
         };
     },
-    computed: {
-        uniqueRecipes() {
-            const uniqueTitles = [...new Set(this.recipes.map(recipe => recipe.title))];
-            return uniqueTitles.map(title => this.recipes.find(recipe => recipe.title === title));
+    methods: {
+        handleSearch(query) {
+            this.searchQuery = query;
         },
-        filteredRecipes() {
-            return this.uniqueRecipes.filter(recipe =>
-                recipe.title.toLowerCase().includes(this.searchQuery.toLowerCase())
-            );
+        handleRecipesLoaded(data) {
+            this.recipes = data;
+            this.loading = false;
         },
-    },
-    created() {
-        fetch('https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes')
-            .then(response => response.json())
-            .then(data => {
-                this.recipes = data;
-                this.loading = false;
-            })
-            .catch(error => {
-                console.error('Error fetching recipes:', error);
-                this.loading = false;
-            });
-
-        fetch('https://jau22-recept-grupp3-j35j900nj4w3.reky.se/categories')
-            .then(response => response.json())
-            .then(data => {
-                this.categories = data.map(category => ({
-                    name: category.name,
-                    recipeCount: category.count || 0,
-                }));
-            })
-            .catch(error => {
-                console.error('Error fetching categories:', error);
-            });
+        handleCategoriesLoaded(data) {
+            this.categories = data.map(category => ({
+                name: category.name,
+                recipeCount: category.count || 0,
+            }));
+        },
     },
 };
-
 </script>
-
+  
 <style scoped>
 .grid-box {
     height: 100vh;

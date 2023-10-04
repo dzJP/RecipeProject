@@ -1,5 +1,8 @@
 <template>
 	<div class="navbar">
+		<router-link :to="'/'">
+			All recipes ({{ calculateTotalRecipes() }})
+		</router-link>
 		<!-- If categories are available, display them as links -->
 		<div v-if="categories.length > 0">
 			<div v-for="category in categories" :key="category.name">
@@ -15,7 +18,18 @@
 export default {
 	name: 'NavbarComponent',
 	props: ['categories'],
+	methods: {
+		calculateTotalRecipes() {
+			let total = 0;
+			for (const category of this.categories) {
+				total += category.recipeCount;
+
+			}
+			return total;
+		}
+	}
 };
+
 </script>
 
 <style scoped>

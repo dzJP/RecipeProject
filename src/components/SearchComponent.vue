@@ -1,9 +1,9 @@
 <template>
     <div class="searchbar">
-        <input v-model="searchQuery" @input="searchRecipes" id="search-field" placeholder="Search recipes..." />
+        <input v-model="searchQuery" id="search-field" placeholder="Search recipes..." />
     </div>
 </template>
-  
+
 <script>
 export default {
     data() {
@@ -11,13 +11,14 @@ export default {
             searchQuery: '',
         };
     },
-    methods: {
-        searchRecipes() {
+    watch: {
+        searchQuery() {
             this.$emit('search', this.searchQuery);
         },
     },
 };
 </script>
+
 <style scoped>
 .searchbar {
     grid-column: 2 / 3;
