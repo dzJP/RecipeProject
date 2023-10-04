@@ -80,15 +80,7 @@ export default {
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-template-rows: 300px 30px 1fr;
-    gap: 1rem;
+    /* gap: 1rem; */
 }
 
-.grid-box>* {
-    border-radius: 10px;
-}
-
-.recipe-image {
-    width: 250px;
-    height: auto;
-}
 </style>

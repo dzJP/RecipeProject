@@ -1,5 +1,5 @@
 <template>
-	<div class="navbar">
+	<aside class="navbar">
 		<router-link :to="'/'">
 			All recipes ({{ calculateTotalRecipes() }})
 		</router-link>
@@ -11,7 +11,7 @@
 				</router-link>
 			</div>
 		</div>
-	</div>
+	</aside>
 </template>
 
 <script>
@@ -36,6 +36,13 @@ export default {
 .navbar {
 	grid-column: 1 / 2;
 	grid-row: 2 / 4;
-	background-color: rgb(145, 148, 158);
+	/* background-color: #C4E0F3; */
+	background-image: url('../assets/blurry-gradient-haikei.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 1rem;
+	border-top: 2px solid #C4E0F3;
+	border-right: 2px solid #C4E0F3;
+	margin-right: 5px;
 }
 </style>

@@ -10,4 +10,7 @@ export default {
 
 <style>
 /* Add global CSS styles if needed */
+body {
+  background-color: #FFFFFF;
+}
 </style>
