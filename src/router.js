@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import RecipesList from './views/RecipesList.vue';
 import RecipeView from './views/RecipeView.vue';
 import CategoryView from './views/CategoryView.vue'; 
 import HomeView from './views/HomeView.vue';
@@ -20,11 +19,11 @@ const routes = [
     name: 'category',
     component: CategoryView,
   },
-  {
-    path: '/recipes',
-    name: 'recipes',
-    component: RecipesList,
-  },
+  // {
+  //   path: '/recipes',
+  //   name: 'recipes',
+  //   component: RecipesList,
+  // },
 ];
 
 const router = createRouter({
