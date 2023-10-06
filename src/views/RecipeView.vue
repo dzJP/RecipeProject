@@ -16,6 +16,7 @@
             {{ step }}
           </li>
         </ul>
+        <CommentSection :recipeId="recipe.id" />
       </div>
     </div>
   </div>
@@ -23,10 +24,12 @@
 
 <script>
 import HeaderComponent from '../components/HeaderComponent.vue';
+import CommentSection from '../components/CommentSection.vue';
 
 export default {
   components: {
     HeaderComponent,
+    CommentSection,
   },
   data() {
     return {
