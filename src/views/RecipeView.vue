@@ -35,6 +35,9 @@
         <div class="recipe-rating-container">
           <h3>Vad tyckte du om receptet?</h3>
           <p>Klicka på en stjärna för att ge ditt betyg!</p>
+          <div>
+
+          </div>
 
           <!-- Skicka in kod för att sätta ett betyg -->
         </div>
@@ -76,6 +79,13 @@ export default {
         this.loading = false;
       });
   },
+
+
+
+
+  
+
+
 };
 
 </script>
