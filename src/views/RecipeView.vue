@@ -35,15 +35,17 @@
                     <h3>Vad tyckte du om receptet?</h3>
                     <p>Klicka på en stjärna för att ge ditt betyg!</p>
                     <div>
-
+                        <StarRatingComponent />
+                        <CommentSectionComponent />
                     </div>
-
+                        
                     <!-- Skicka in kod för att sätta ett betyg -->
                 </div>
             </section>
             <section class="comment-section">
                 <div class="write-comment-container">
                     <!-- Sätt in kod för att skriva en kommentar här -->
+
                 </div>
                 <div class="previous-comments-container">
                     <!-- Sätt in kod som listar tidigare kommentarer -->
@@ -54,11 +56,15 @@
 </template>
 
 <script>
-import HeaderComponent from '../components/HeaderComponent.vue';
+import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
+import HeaderComponent from '@/components/HeaderComponent.vue';
+import StarRatingComponent from '@/components/StarRating.vue';
 
 export default {
     components: {
         HeaderComponent,
+        CommentSectionComponent,
+        StarRatingComponent,
     },
     data() {
         return {
