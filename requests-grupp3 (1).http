@@ -283,12 +283,12 @@ Content-Type: application/json
 ###
 
 # Hämtar alla kommentarer för ett recept
-GET {{baseUrl}}/recipes/63309a293120fd5bba986857/comments
+GET {{baseUrl}}/recipes/651fea4d99612c970cb46d37/comments
 
 ###
 
 # Lägger till en kommentar för ett recept
-POST {{baseUrl}}/recipes/63309a293120fd5bba986857/comments
+POST {{baseUrl}}/recipes/651fea4d99612c970cb46d37/comments
 Content-Type: application/json
 
 {
