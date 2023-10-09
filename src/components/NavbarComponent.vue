@@ -1,13 +1,17 @@
 <template>
 	<aside class="navbar">
 		<router-link :to="'/'">
-			All recipes ({{ calculateTotalRecipes() }})
+			<div :class="{ 'bold-text': isAllRecipesActive() }">
+				All recipes ({{ calculateTotalRecipes() }})
+			</div>
 		</router-link>
 		<!-- If categories are available, display them as links -->
 		<div v-if="categories.length > 0">
 			<div v-for="category in categories" :key="category.name">
 				<router-link :to="'/category/' + category.name">
-					{{ category.name }} ({{ category.recipeCount }} recipes)
+					<div :class="{ 'bold-text': category.name === getCategoryFromRoute($route.path) }">
+						{{ category.name }} ({{ category.recipeCount }} recipes)
+					</div>
 				</router-link>
 			</div>
 		</div>
@@ -26,7 +30,19 @@ export default {
 
 			}
 			return total;
-		}
+		},
+
+
+		isAllRecipesActive() {
+			return this.$route.path === '/';
+		},
+
+		getCategoryFromRoute(routePath) {
+			// Use JavaScript to extract the category from the route path
+			const parts = routePath.split('/');
+			// Assuming the category is always in the second position
+			return parts[2] || 'Unknown Category';
+		},
 	}
 };
 
@@ -44,5 +60,9 @@ export default {
 	border-top: 2px solid #C4E0F3;
 	border-right: 2px solid #C4E0F3;
 	margin-right: 5px;
+}
+
+.bold-text {
+	font-weight: bold;
 }
 </style>

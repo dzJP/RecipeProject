@@ -2,8 +2,15 @@
     <div class="grid-box">
         <HeaderComponent />
         <NavbarComponent :categories="categories" />
+
+
+        
         <SearchComponent v-model="searchQuery" @search="handleSearch" />
         <LoadingComponent v-if="loading" />
+
+
+
+
         <RecipeContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
         <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
         <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
