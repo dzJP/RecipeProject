@@ -1,29 +1,32 @@
 <template>
     <main class="big-recipes-container">
         <section v-for="recipe in filteredRecipes" :key="recipe._id" class="recipe-container">
-            <router-link :to="'/recipe/' + recipe._id" class="img-container">
+            <div class="img-container">
                 <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
-            <div class="recipe-heading">
-                <div>
-                    <h2>{{ recipe.title }}</h2>
+                <div class="recipe-heading">
+                    <div>
+                        <h2>{{ recipe.title }}</h2>
+                    </div>
+                    <div>
+                        <p>{{ recipe.description }}</p>
+                    </div>
+                    <div>
+                        <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
+                    </div>
                 </div>
-                <div>
-                    <button class="button">Läs mer</button>
+                <div class="rating-container">
+                    <p>Rating: {{ recipe.avgRating || 'N/A' }}</p>
                 </div>
-            </div>
-        </router-link>
-            <div class="rating-container">
-                <p>Rating: {{ recipe.avgRating || 'N/A' }}</p>
-            </div>
-            <div class="information-container">
-                <div>
-                    <p>Ingredients: {{ recipe.ingredients.length }}</p>
-                </div>
-                <div>
-                    <p>Time: {{ recipe.timeInMins }} mins</p>
-                </div>
-                <div>
-                    <p>Category: {{ recipe.categories.join(', ') }}</p>
+                <div class="information-container">
+                    <div>
+                        <p>Ingredients: {{ recipe.ingredients.length }}</p>
+                    </div>
+                    <div>
+                        <p>Time: {{ recipe.timeInMins }} mins</p>
+                    </div>
+                    <div>
+                        <p>Category: {{ recipe.categories.join(', ') }}</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -32,8 +35,13 @@
   
   
 <script>
+import CustomButton from '../components/CustomButton.vue';
+
 export default {
     props: ['recipes', 'searchQuery'],
+    components: {
+        CustomButton,
+    },
     computed: {
         filteredRecipes() {
             if (Array.isArray(this.recipes)) {
@@ -45,6 +53,7 @@ export default {
         },
     },
 };
+
 </script>
 
 <style scoped>
@@ -93,20 +102,10 @@ export default {
     flex-grow: 0;
 }
 
-
 .recipe-image {
     border: 1px solid #6D94BC;
     width: 250px;
     height: 250px;
-}
-
-.button {
-    background-color: #00A1F1;
-    color: #F3FAFF;
-    border-radius: 10px;
-    border: none;
-    padding: 15px;
-
 }
 </style>
   
