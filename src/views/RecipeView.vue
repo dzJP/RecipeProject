@@ -35,10 +35,15 @@
                     <h3>Vad tyckte du om receptet?</h3>
                     <p>Klicka på en stjärna för att ge ditt betyg!</p>
                     <div>
-                        <StarRatingComponent />
+                        <div v-if="!hasVoted">
+                            <RatingComponent @star-input="handleUserRating" :max-stars="5" />
+                        </div>
+                        <div v-else>
+                            <p>Thank you for your vote</p>
+                        </div>
                         <CommentSectionComponent />
                     </div>
-                        
+
                     <!-- Skicka in kod för att sätta ett betyg -->
                 </div>
             </section>
@@ -58,18 +63,20 @@
 <script>
 import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
 import HeaderComponent from '@/components/HeaderComponent.vue';
-import StarRatingComponent from '@/components/StarRating.vue';
+import RatingComponent from '@/components/RatingComponent.vue'
 
 export default {
     components: {
         HeaderComponent,
         CommentSectionComponent,
-        StarRatingComponent,
+        RatingComponent,
     },
     data() {
         return {
             loading: true,
             recipe: {},
+            userRating: 0,
+            hasVoted: false,
         };
     },
     created() {
@@ -79,6 +86,9 @@ export default {
         fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes/${recipeId}`)
             .then(response => response.json())
             .then(data => {
+                if (data.avgRating !== undefined) {
+                        data.avgRating = parseFloat(data.avgRating.toFixed(1));
+                    }
                 this.recipe = data;
                 console.log('Recipe Data:', this.recipe);
                 this.loading = false;
@@ -89,8 +99,45 @@ export default {
             });
     },
 
+    watch: {
+        'userRating'() {
+            this.storeRating();
+        },
+    },
+
+    methods: {
+
+        async storeRating() {
+
+            try {
+                const response = await fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes/${this.recipe._id}/ratings`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        rating: this.userRating,
+                    })
+                });
+                if (response.ok) {
+                    this.hasVoted = true;
+                }
+                console.log(response);
+            } catch (error) {
+                console.error('Error submitting comment:', error);
+            }
 
 
+
+        },
+
+
+
+
+        handleUserRating(data) {
+            this.userRating = data;
+        },
+    },
 
 
 

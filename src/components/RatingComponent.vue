@@ -1,37 +1,59 @@
 <template>
-	<div class="rating">
-		<h3>Rating</h3>
-		<p>Rating: {{ rating }}</p>
-	</div>
-</template>
+    <div class="star-rating">
+      <!-- Render stars based on the 'rating' data property -->
+      <i
+        v-for="index in maxStars"
+        :key="index"
+        @click="rate(index)"
+        :class="['star', { 'filled': index <= rating }]"
+      >
+        &#9733; <!-- Unicode star character -->
+      </i>
+    </div>
+  </template>
   
-<script>
-export default {
-	data() {
-		return {
-			rating: null, // Initialize rating to null
-		};
-	},
-	methods: {
-		fetchRating() {
-			/**
-			 * Send a GET request to fetch rating.
-			 * Use the REST Client extension in your VS Code to send this request.
-			 *
-			 * Example request in REST Client:
-			 * 
-			 * @name Fetch Rating
-			 * @request GET https://api.example.com/rating
-			 */
-		},
-	},
-	created() {
-		this.fetchRating(); // Fetch rating when the component is created
-	},
-};
-</script>
+  <script>
+  export default {
+    props: {
+      value: {
+        type: Number,
+        default: 0,
+      },
+      maxStars: {
+        type: Number,
+        default: 5,
+      },
+    },
+    data() {
+      return {
+        rating: '',
+      };
+    },
+    methods: {
+      rate(index) {
+        // Emit a custom event to update the parent component's 'value' prop
+        this.rating = index;
+        this.$emit('star-input', this.rating);
+      },
+    },
+  };
+  </script>
   
-<style scoped>
-/* Add CSS styles specific to the rating component */
-</style>
+
   
+  <style scoped>
+  .star-rating {
+    font-size: 0; /* Remove whitespace between inline-block stars */
+  }
+  
+  .star {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px; /* Adjust the size of the stars as needed */
+    color: #ccc; /* Default star color (empty) */
+  }
+  
+  .star.filled {
+    color: #fdd835; /* Filled star color (e.g., yellow) */
+  }
+  </style>
