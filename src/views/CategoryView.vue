@@ -1,10 +1,17 @@
 <template>
-    <div class="grid-box">
+	<div class="flex-box">
 		<HeaderComponent />
-		<NavbarComponent :categories="categories" />
-		<SearchComponent v-model="searchQuery" @search="handleSearch" />
-		<div v-if="loading" class="big-recipes-container">Loading...</div>
-		<RecipesContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
+
+		<main class="main-box">
+			<NavbarComponent :categories="categories" />
+
+			<div class="test">
+				<SearchComponent v-model="searchQuery" @search="handleSearch" />
+				<div v-if="loading" class="big-recipes-container">Loading...</div>
+				<RecipesContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
+			</div>
+
+		</main>
 	</div>
 </template>
   
@@ -86,20 +93,22 @@ export default {
 </script>
   
 <style scoped>
-.grid-box {
-	height: 100vh;
-	display: grid;
-	grid-template-columns: 200px 1fr;
-	grid-template-rows: 300px 30px 1fr;
-	gap: 1rem;
+.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 1rem; */
 }
 
-.grid-box>* {
-	border-radius: 10px;
+.main-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
 }
 
-.recipe-image {
-	width: 250px;
-	height: auto;
+.test {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 </style>

@@ -6,7 +6,7 @@
 			</div>
 		</router-link>
 		<!-- If categories are available, display them as links -->
-		<div v-if="categories.length > 0">
+		<div v-if="categories.length > 0" class="non-bold-category">
 			<div v-for="category in categories" :key="category.name">
 				<router-link :to="'/category/' + category.name">
 					<div :class="{ 'bold-text': category.name === getCategoryFromRoute($route.path) }">
@@ -50,9 +50,12 @@ export default {
 
 <style scoped>
 .navbar {
-	grid-column: 1 / 2;
-	grid-row: 2 / 4;
+	display: flex;
 	/* background-color: #C4E0F3; */
+	width: 150px;
+	flex-wrap: wrap;
+	flex-direction: column;
+	height: 100vh;
 	background-image: url('../assets/blurry-gradient-haikei.png');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -60,6 +63,14 @@ export default {
 	border-top: 2px solid #C4E0F3;
 	border-right: 2px solid #C4E0F3;
 	margin-right: 5px;
+}
+
+.navbar > * {
+	display: flex;
+}
+
+.non-bold-category {
+	flex-direction: column;
 }
 
 .bold-text {

@@ -21,8 +21,9 @@ export default {
 
 <style scoped>
 .searchbar {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    height: 20px;
+    display: flex;
+    margin-bottom: 10px;
 }
 
 .searchbar input {
