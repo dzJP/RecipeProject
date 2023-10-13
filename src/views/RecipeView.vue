@@ -144,7 +144,7 @@ export default {
 .recipe {
   flex: 1;
   margin-right: 20px;
-
+  /* Add some margin to separate recipe content from description */
 }
 
 .recipe-ingredients {
@@ -167,13 +167,13 @@ export default {
 }
 
 .recipe-description .recipe-image {
-  width: 600px; 
-  height: auto; 
+  width: 800px; 
+  height: auto; /* Maintain aspect ratio */
 
 }
 
 .recipe-instructions {
-  background-image: url('../assets/blurry-gradient-haikei.png'); 
+  background-image: url('../assets/blurry-gradient-haikei.png'); /* Use the same image as other sections */
   background-size: cover;
   background-repeat: no-repeat;
   padding: 1rem;
