@@ -4,7 +4,7 @@
 			<HeaderComponent />
 		</header>
 		<main class="content">
-			<section class="recipe">
+			<section class="recipe section-recipe">
 				<h1>{{ recipe.title }}</h1>
 				<div class="recipe-info">
 					<p>
@@ -20,25 +20,27 @@
 						</li>
 					</ul>
 				</div>
-				<div class="recipe-instructions">
-					<h3>Gör så här</h3>
-					<ol>
-						<li v-for="(step, index) in recipe.instructions" :key="index">
-							{{ step }}
-						</li>
-					</ol>
-				</div>
 			</section>
 
-			<section class="recipe-description">
+			<section class="recipe-description section-recipe">
 				<div class="description-content">
 					<p>{{ recipe.description }}</p>
 				</div>
-				<img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
+				<div class="image-ingredients-container">
+					<img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
+					<div class="recipe-instructions">
+						<h3>Gör så här</h3>
+						<ol>
+							<li v-for="(step, index) in recipe.instructions" :key="index">
+								{{ step }}
+							</li>
+						</ol>
+					</div>
+				</div>
 			</section>
 		</main>
 
-		<section class="recipe-rating-container">
+		<section class="recipe-rating-container section-recipe-rating-container">
 			<h3>Vad tyckte du om receptet?</h3>
 			<p>Klicka på en stjärna för att ge ditt betyg!</p>
 			<div>
@@ -54,6 +56,9 @@
 	</div>
 </template>
   
+  
+	
+	
 <script>
 import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
 import HeaderComponent from '@/components/HeaderComponent.vue';
@@ -123,7 +128,7 @@ export default {
 	},
 };
 </script>
-  
+	
 <style>
 .container {
   display: flex;
@@ -138,18 +143,62 @@ export default {
 
 .recipe {
   flex: 1;
+  margin-right: 20px;
+
+}
+
+.recipe-ingredients {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  border-radius: 50px;
+  max-width: 300px;
+}
+
+.recipe-ingredients h3 {
+  margin-bottom: 1rem;
 }
 
 .recipe-description {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: 20px; /* Adjusted the margin */
+  margin-right: 20px;
 }
 
 .recipe-description .recipe-image {
-  max-width: 50%;
-  height: auto;
+  width: 600px; 
+  height: auto; 
+
+}
+
+.recipe-instructions {
+  background-image: url('../assets/blurry-gradient-haikei.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.recipe-instructions h3 {
+  margin-bottom: 1rem;
+}
+
+.section-recipe,
+.section-recipe-rating-container {
+  background-image: url('../assets/blurry-gradient-haikei.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.recipe-description.section-recipe {
+  background-image: none;
+  /* Remove the background image */
 }
 </style>
-  
+	
