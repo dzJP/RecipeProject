@@ -171,7 +171,146 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Nalesniki(Polish Pancakes)",
+    "title": "Etiopiska pannkakor",
+    "description": "De här smarriga pannakorna från Etiopien är glutenfria och perfekta att servera till en mustig gryta.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://img.koket.se/standard-mega/etiopiska-pannkakor.png.jpg",
+    "timeInMins": 35,
+    "categories": [ "Africa"],
+    "instructions": [ "Blanda de torra ingredienserna.", "Vispa därefter ner ägg och vatten.", "Låt svälla i 20 minuter.",
+     "Stek tunna pannkakor av smeten i lite olja. Stek bara på ena sidan tills ovansidan bubblar och torkat.",
+     "Håll pannkakorna varma under en handduk i ugnen på 70 grader medan du steker klart resten." ],
+    "ingredients": [
+        {
+            "name": "Glutenfri Mjölmix",
+            "amount": 3.75,
+            "unit": "dl"
+        },
+        {
+            "name": "Teffmjöl (eller Bovetemjöl)",
+            "amount": 3.75,
+            "unit": "tsk"
+        },
+        {
+            "name": "Bakpulver",
+            "amount": 2,
+            "unit": "tsk"
+        },
+        {
+            "name": "Salt",
+            "amount": 1.5,
+            "unit": "tsk"
+        },
+        {
+            "name": "Ägg",
+            "amount": 2,
+            "unit": "stycken"
+        },
+        {
+            "name": "Kolsyrat vatten",
+            "amount": 7.5,
+            "unit": "dl"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Somaliska pannkakor",
+    "description": "Malawax är tunna pannkakor med smak av kardemumma.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/d2c49563-6f20-42a2-87bd-10342890c77f?fit=crop&h=750&w=1000&s=8a09086ea35b9359085ab1ca9e846d17373d6386",
+    "timeInMins": 15,
+    "categories": [ "Africa"],
+    "instructions": [ "Blanda mjöl, socker, kardemumma och salt i en bunke.", "Vispa ägg i en annan bunke och tillsätt mjölk, olja och häll över till mjölblandningen lite i taget.", 
+    "Rör till smeten är klumpfri. Hetta upp olja eller smör i en stekpanna och stek pannkakorna tills de fått fin färg. Pensla med smör innan du vänder. Upprepa tills du har använt all smet.",
+     "Servera med valfritt tillbehör. I Somalia äts de med smör och socker med det går lika bra med sylt och grädde." ],
+    "ingredients": [
+        {
+            "name": "Mjöl",
+            "amount": 4,
+            "unit": "dl"
+        },
+        {
+            "name": "Mjölk",
+            "amount": 6,
+            "unit": "dl"
+        },
+        {
+            "name": "Kardemumma, mald",
+            "amount": 1,
+            "unit": "tsk"
+        },
+        {
+            "name": "Socker",
+            "amount": 2,
+            "unit": "msk"
+        },
+        {
+            "name": "Olja",
+            "amount": 2,
+            "unit": "msk"
+        },
+        {
+            "name": "Ägg",
+            "amount": 2,
+            "unit": "stycken"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Sudanesiska pannkakor",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://img.koket.se/standard-mega/majspannkaka-fran-sudan.jpg.webp",
+    "timeInMins": 15,
+    "categories": [ "Africa"],
+    "instructions": [ "Vispa ihop mjöl och salt och hälften av vattnet till en slät smet. Vispa ner resten av vattnet och låt sedan smeten stå svalt tills nästa dag.",
+    "Hetta upp en stekpanna och smält lite smör i den. Häll i smet och grädda pannkakan tills smeten stelnat. Vänd och stek färdig på andra sidan. Lägg upp pannkakorna på varmt fat och servera dem nystekta." ],
+    "ingredients": [
+        {
+            "name": "Majsmjö",
+            "amount": 4,
+            "unit": "dl"
+        },
+        {
+            "name": "Salt",
+            "amount": 1,
+            "unit": "krm"
+        },
+        {
+            "name": "Vatten",
+            "amount": 6,
+            "unit": "dl"
+        },
+        {
+            "name": "Smör(till stekning)",
+            "amount": 3,
+            "unit": "msk"
+        }
+    ]
+}
+
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Polska pannkakor",
     "description": "Your house is going to smell like apples and cinnamon for 2 weeks.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://ilovebake.pl/wp-content/uploads/2015/01/nalesniki-z-jablkami-i-cynamonem-9.jpg",
@@ -182,7 +321,7 @@ Content-Type: application/json
         {
             "name": "Vetemjöl",
             "amount": 2.1,
-            "unit": "deciliter"
+            "unit": "dl"
         },
         {
             "name": "Ägg",
@@ -197,7 +336,7 @@ Content-Type: application/json
         {
             "name": "Mjölk(ljummen)",
             "amount": 1.25,
-            "unit": "deciliter"
+            "unit": "dl"
         },
         {
             "name": "Smör",
@@ -233,6 +372,565 @@ Content-Type: application/json
 }
 
 ###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Tyska pannkakor",
+    "description": "Fluffig som ett moln och den goda pannkakan bakas direkt i formen. Med söta blåbär och syrlig lemon curd kan du servera den till både frukost, brunch och mellanmål.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/5b1505f1-f486-421f-ae33-ecb14f80a93c?fit=crop&h=664&w=1000&s=5d0312d7af80917bf2a6e6cf18d11352eaa9b294",
+    "timeInMins": 25,
+    "categories": [ "Europe"],
+    "instructions": [ "Värm ugnen till 220 grader.", "Värm mjölken i en kastrull.",
+    "Lägg en klick smör i en form som tål att stå i ugnen. Ställ in den i ugnen och låt smöret smälta.",
+    "Rör ihop ägg, mjöl, socker och salt. Rör i den varma mjölken.", "Ta ut ugnsformen och häll i smeten. Ställ in i mitten av ugnen och låt svälla i cirka 15 minuter. När den är fluffig och fått fin färg är den färdig. Om du vill kan du använda flera mindre portionsformar.",
+    "Låt den sjunka ihop i mitten och bred på lemon curd, häll över blåbär och pudra med florsocker. Servera direkt." ],
+    "ingredients": [
+        {
+            "name": "Mjöl",
+            "amount": 1,
+            "unit": "dl"
+        },
+        {
+            "name": "Ägg",
+            "amount": 3,
+            "unit": "stycken"
+        },
+        {
+            "name": "Lemon curd",
+            "amount": 1,
+            "unit": "dl"
+        },
+        {
+            "name": "Mjölk",
+            "amount": 1,
+            "unit": "dl"
+        },
+        {
+            "name": "Smör",
+            "amount": 2,
+            "unit": "msk"
+        },
+        {
+            "name": "Socker",
+            "amount": 2,
+            "unit": "msk"
+        },
+        {
+            "name": "Salt",
+            "amount": 1,
+            "unit": "krm"
+        },
+        {
+            "name": "Blåbär",
+            "amount": 3,
+            "unit": "dl"
+        },
+        {
+            "name": "Florsocker",
+            "amount": 1,
+            "unit": "msk"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Brasilianska Tapioka pannkakor",
+    "description": "Veganska och vegetariska utan ägg.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://receptfavoriter.se/sites/default/files/tapioca_65_980_4.jpg",
+    "timeInMins": 25,
+    "categories": [ "Sydamerika"],
+    "instructions": [ "Använd en stor bakskål och blanda nästan allt tapiokamjöl med vatten eller juice till en grynig massa. Tips är att inte tillsätta allt mjöl på en gång om du får för mycket vätska. Knåda och arbeta ihop några minuter för hand tills stärkelsen har sugit upp vätskan och blir till en smulig deg. Fuktigheten ska vara 40-45%.",
+    "Förbered och ta fram övriga ingredienser som önskade toppings. Exempelvis skiva banan och förbereda frukt eller andra pålägg och tillbehör.",
+    "Värm en stekpanna till lite över medelvärme.", "Värm en stekpanna till lite över medelvärme.", "Sila och tryck genom mjölet direkt över stekpannan så att det täcker botten på stekpannan i ett några mm tjockt lager - valfritt hur tjockt. Använd sil eller durkslag.",
+    "Efter runt en minut så börjar kanterna på pannkakan lyfta sig och då kan man vända den.",
+    "Stek 30 sekunder till.", "Toppa med önskade toppings. Exempelvis bred på jordnötssmör, skivad banan och riv över choklad." ],
+    "ingredients": [
+        {
+            "name": "Tapioca mjöl",
+            "amount": 500,
+            "unit": "gram"
+        },
+        {
+            "name": "Bakpulver",
+            "amount": 0.5,
+            "unit": "msk"
+        },
+        {
+            "name": "Vätska (vatten, råsaft, frukt- eller bärjuice eller grönsaksjuice)",
+            "amount": 2.5,
+            "unit": "dl"
+        },
+        {
+            "name": "Frön chiafrön, sesamfrön, kokos och linfrön (valfritt)",
+            "amount": 0.5,
+            "unit": "dl"
+        },
+        {
+            "name": "Jordnötssmör",
+            "amount": 1,
+            "unit": "dl"
+        },
+        {
+            "name": "Bananer i skivor",
+            "amount": 2,
+            "unit": "stycken"
+        },
+        {
+            "name": "Chocklad(riven)",
+            "amount": 30,
+            "unit": "gram"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Venezuelanska pannkakor(Cachapas)",
+    "description": "Dessa söta majspannkakor från Venezuela gör den perfekta frukosten . Cachapas är gjorda med enkla ingredienser - färsk majs, lite smör, grädde och salt - och ett bra alternativ till den genomsnittliga mjölbaserade pannkakan.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://idata.hiloved.com/imgs/672a61b433c2343c-1024x681.jpg",
+    "timeInMins": 25,
+    "categories": [ "Sydamerika"],
+    "instructions": [ "Placera majs, grädde, salt och smält smör i en matberedare eller mixer. Process tills du har en ganska jämn, tjock smet.",
+    "Värm en lätt oljad stekpanna över låg temperatur. Tillsätt ca 1/4 till 1/3 kopp smeten till stekpanna. Sprid det med en spatel för att skapa en cirkel.",
+    "Koka pannkaka tills det börjar bubbla och spateln lätt kan glida under den.", "Vänd pannkakan och laga i flera minuter på andra sidan. Håll temperaturen på lågsidan, eller pannkakans utsida brinner innan insidan är helt kokt.",
+    "Fortsätt att laga pannkakor tills du har använt all smet.",
+    "Sprid pannkakorna med smör och gräddeost eller topp med riven queso frescoost . Vik pannkakorna i hälften och servera." ],
+    "ingredients": [
+        {
+            "name": "Majs(färska eller frysta kärnor)",
+            "amount": 3,
+            "unit": "koppar"
+        },
+        {
+            "name": "Grädde",
+            "amount": 1,
+            "unit": "msk"
+        },
+        {
+            "name": "Majsstärkelse",
+            "amount": 1.25,
+            "unit": "kopp"
+        },
+        {
+            "name": "Smör(smält)",
+            "amount": 2,
+            "unit": "msk"
+        },
+        {
+            "name": "Salt",
+            "amount": 1,
+            "unit": "tsk"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Argentinska pannkakor(Panqueques Con Dulce De Leche)",
+    "description": "Dessa perfekt mjuka och ömma Panqueques Con Dulce De Leche är alla karamellälskares dröm om du gillar dem till frukost eller efterrätt!",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://bakeitwithlove.com/wp-content/uploads/2020/11/Panqueques-con-Dulce-de-Leche-sm.jpg.webp",
+    "timeInMins": 45,
+    "categories": [ "Sydamerika"],
+    "instructions": [ "I en stor blandningsskål, tillsätt de torra ingredienserna inklusive allmjöl, socker och salt.",
+    "Vispa de torra ingredienserna för att fördela sockret och saltet jämnt.", "Tillsätt de våta ingredienserna inklusive mjölk och ägg.",
+    "Blanda ingredienserna, vispa tills smeten är jämn. * Smeten ska hällas ut från din slev som tung grädde, varken för vattnig eller för tjock som pannkaka smet.",
+    "Täck skålen med plastfolie, kyl och lägg smeten åt sidan för att vila i 30 minuter, upp till en timme och till och med över natten.",
+    "---> Koka Panqueques (Crepes) <----", "Värm din stekpanna eller stekpannan till medelvärme. När du är uppvärmd, borsta lätt med smör eller olja. * Applicera smöret eller oljan igen efter behov mellan tillagningen av crepesna.",
+    "Vispa smeten innan du använder eftersom mjölet sätter sig medan smeten vilar. Använd en ¼ koppmätningskopp eller sleva ut crepe-smeten på din uppvärmda stekpanna eller cirkel och luta sedan pannan för att sprida smeten ut. Koka i ungefär en minut på första sidan tills den är gyllene i färg och en spatel glider under kräppkanterna (utan att klibba).",
+    "Vänd din crepe och koka andra sidan i ungefär 1 minut eller tills en ljusguldbrun färg. Ta bort från värmen och upprepa med kvarvarande crepe smet. Stapla de kokta crepesna ovanpå varandra på en tallrik tills alla crepesna är kokta.",
+    "Servera crepesna, antingen uppvärmda eller vid rumstemperatur, med ett generöst lager av dulce de leche utspridda på varje crepe. Rulla, vik eller stapla crepesna för att servera. Strö över konditori socker, vispad grädde och färsk frukt, eller värm den återstående dulce de leche för att hälla över varje portion." ],
+    "ingredients": [
+        {
+            "name": "Mjöl",
+            "amount": 3,
+            "unit": "koppar"
+        },
+        {
+            "name": "Socker",
+            "amount": 3,
+            "unit": "msk"
+        },
+        {
+            "name": "Salt",
+            "amount": 1.5,
+            "unit": "tsk"
+        },
+        {
+            "name": "Ägg(stora)",
+            "amount": 9,
+            "unit": "stycken"
+        },
+        {
+            "name": "Mjölk",
+            "amount": 6,
+            "unit": "koppar"
+        },
+        {
+            "name": "Dulce de leche",
+            "amount": 1,
+            "unit": "burk"
+        }
+    ]
+}
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Amerikanska pannkakor",
+    "description": "Lyxig helgfrukost, brunch eller lunch.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://img.koket.se/standard-mega/bob-klassiska-amerikanska-pannkakor.jpg.webp",
+    "timeInMins": 30,
+    "categories": [ "Nordamerika"],
+    "instructions": [ "Smält smöret. Blanda alla torra ingredienser i en bunke. Vispa sedan ner det smälta smöret, mjölk och ägg. Vispa tills smeten är helt slät utan klumpar.",
+    "Hetta upp en stekpanna med lite smör och grädda små fina pannkakor. Du kan behöva smöra pannan mellan pannkakorna.", "Servera med lönnsirap, BOB BARA BÄR & Frukt och eventuellt lite färska blåbär." ],
+    "ingredients": [
+        {
+            "name": "Mjöl",
+            "amount": 2.5,
+            "unit": "dl"
+        },
+        {
+            "name": "Bakpulver",
+            "amount": 2,
+            "unit": "tsk"
+        },
+        {
+            "name": "Salt",
+            "amount": 1,
+            "unit": "krm"
+        },
+        {
+            "name": "Strösocker",
+            "amount": 1,
+            "unit": "msk"
+        },
+        {
+            "name": "Mjölk",
+            "amount": 2.5,
+            "unit": "dl"
+        },
+        {
+            "name": "Smör",
+            "amount": 25,
+            "unit": "gram"
+        },
+        {
+            "name": "Blåbär",
+            "amount": 125,
+            "unit": "gram"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Mexikanska pannkakor",
+    "description": "En blandning mellan tacos och ugnspannkaka blir till det bästa av två världar.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/93a2613a-aada-45cc-924d-d82c30ff4c91?fit=crop&h=750&w=1000&s=cb957d59d256b27ee998b3aacf7b8dee84038546",
+    "timeInMins": 45,
+    "categories": [ "Nordamerika"],
+    "instructions": [ "Skala och skär morötterna i korta stavar.", "Skölj, ansa och skär blomkålshuvudet i buketter.", "Skala och strimla purjolöken och palsternackan.",
+    "Strimla ner bacon och fräs det knaprigt i sitt eget fett.", "Lägg ner det gröna och låt fräsa med några minuter.", "Fördela baconfräset i en stor ugnssäker form eller långpanna.",
+    "Vispa samman ägg, mjölk, vetemjöl, texmexkrydda och salt. Häll smeten över grönsaker och bacon.", "Grädda i cirka 30 minuter på 225 grader. Låt stå i några minuter och servera sedan med tomat- och löksallad samt bröd." ],
+    "ingredients": [
+        {
+            "name": "Morötter",
+            "amount": 4,
+            "unit": "stycken"
+        },
+        {
+            "name": "Purjolök",
+            "amount": 1,
+            "unit": "stycken"
+        },
+        {
+            "name": "Palsternacka",
+            "amount": 1,
+            "unit": "stycken"
+        },
+        {
+            "name": "Bacon",
+            "amount": 140,
+            "unit": "gram"
+        },
+        {
+            "name": "Ägg",
+            "amount": 3,
+            "unit": "stycken"
+        },
+        {
+            "name": "Mjölk",
+            "amount": 8,
+            "unit": "dl"
+        },
+        {
+            "name": "Vetemjöl",
+            "amount": 4,
+            "unit": "dl"
+        },
+        {
+            "name": "Textmexkrydda",
+            "amount": 1,
+            "unit": "msk"
+        },
+        {
+            "name": "Salt",
+            "amount": 0.5,
+            "unit": "tsk"
+        }
+    ]
+}
+
+###
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Kanadensiska pannkakor",
+    "description": "En blandning mellan tacos och ugnspannkaka blir till det bästa av två världar.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://static.mathem.se/shared/images/recipes/doublelarge/matispankis.jpeg",
+    "timeInMins": 35,
+    "categories": [ "Nordamerika"],
+    "instructions": [ "Smält smöret och tillsätt sedan mjölken. Vispa ner äggen. Blanda mjöl, bakpulver, salt, socker och kardemumma i en skål.", 
+    "Häll ner vätskan samtidigt som du vispar konstant. Låt pannkakssmeten stå och tjockna i runt 15 minuter. Detta är viktigt för att den ska få rätt konsistens.", 
+    "För att grädda pannkakor med en diameter på ca 15 cm, häller du 1,5–2 msk smet i en lätt smörad stekpanna. När smeten pöser upp och får bubblor på ytan vänder du pannkakan med stekspaden och gräddar den på andra sidan.", 
+    "Stapla de gräddade pannkakorna med tjocka skivor Jarlsberg® mellan på ett serveringsfat eller en tallrik. Ringla över lönnsirap och servera." ],
+    "ingredients": [
+        {
+            "name": "Smör",
+            "amount": 50,
+            "unit": "gram"
+        },
+        {
+            "name": "Mjölk",
+            "amount": 2.25,
+            "unit": "dl"
+        },
+        {
+            "name": "Salt",
+            "amount": 0.5,
+            "unit": "tsk"
+        },
+        {
+            "name": "Ägg",
+            "amount": 2,
+            "unit": "stycken"
+        },
+        {
+            "name": "Bakpulver",
+            "amount": 2,
+            "unit": "tsk"
+        },
+        {
+            "name": "Vetemjöl",
+            "amount": 3,
+            "unit": "dl"
+        },
+        {
+            "name": "Socker",
+            "amount": 1,
+            "unit": "msk"
+        },
+        {
+            "name": "Kardemumma",
+            "amount": 1,
+            "unit": "tsk"
+        }
+    ]
+}
+
+### 
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Vietnamesiska pannkakor",
+    "description": "Banh Xeo kallas de här vietnamesiska pannkakorna som är fyllda med krabba och grönsaker.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://img.koket.se/standard-mega/vietnamesiska-pannkakor.png.jpg",
+    "timeInMins": 30,
+    "categories": [ "Asia"],
+    "instructions": [ "Blanda rismjöl, socker, salt och gurkmeja i en stor skål med kokosgrädden. Vispa ner vattnet lite i taget. Låt smeten vila i 10 minuter.", "Innan du steker pannkakorna gör du klart fyllningen.",
+    "Hetta upp en matsked olja i en wok, fräs löksorterna på låg värme tills de blivit genomskinliga men utan att de tar färg.", "Lägg över lökmixen i en bunke och tillsätt fisksås, sesamolja, böngroddar och krabbkött. Blanda och smaksätt med salt och malen vitpeppar.",
+    "Hetta upp woken igen och tillsätt 2 msk olja, när oljan börjar ryka så ta bort den från värmen och täck ytan med olja genom att luta woken från sida till sida.", "Häll ur överflödig olja och torka ur woken med hushållspapper. Tricket är att få en tunn film olja som gör att pannkakssmeten kan täcka woken utan att lossna medan pannkakan steks.",
+    "Häll ca 1 dl smet i woken och vicka den så att hela woken täcks av ett tunt lager smet, stek tills insidan ”stannat” och undersidan fått färg.", "Vik pannkakan dubbel och lägg på ett uppläggningsfat, skeda i en fjärdedel av fyllningen och servera med salladsblad, örter och dippsås vid sidan." ],
+    "ingredients": [
+        {
+            "name": "Rismjöl",
+            "amount": 150,
+            "unit": "gram"
+        },
+        {
+            "name": "Strösocker",
+            "amount": 0.5,
+            "unit": "tsk"
+        },
+        {
+            "name": "Salt",
+            "amount": 0.5,
+            "unit": "tsk"
+        },
+        {
+            "name": "Gurkmeja(malen)",
+            "amount": 0.25,
+            "unit": "tsk"
+        },
+        {
+            "name": "Kokosgrädde",
+            "amount": 240,
+            "unit": "gram"
+        },
+        {
+            "name": "Vatten",
+            "amount": 120,
+            "unit": "gram"
+        },
+        {
+            "name": "Scharlottenlök",
+            "amount": 12,
+            "unit": "gram"
+        },
+        {
+            "name": "Vitlök",
+            "amount": 15,
+            "unit": "gram"
+        },
+        {
+            "name": "Salladslök(skivad)",
+            "amount": 20,
+            "unit": "gram"
+        },
+        {
+            "name": "Fisksås",
+            "amount": 40,
+            "unit": "gram"
+        },
+        {
+            "name": "Sesamolja",
+            "amount": 10,
+            "unit": "gram"
+        },
+        {
+            "name": "Mungböngroddar",
+            "amount": 450,
+            "unit": "gram"
+        },
+        {
+            "name": "Krabbkött(kokt)",
+            "amount": 340,
+            "unit": "gram"
+        }
+    ]
+}
+
+### 
+
+# Lägger till ett nytt recept
+POST {{baseUrl}}/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Kinesiska pannkakor",
+    "description": "Ett mellanting mellan vårrullar och crèpes. Servera dem gärna med lite soja separat.",
+    "ratings": [3, 4, 5, 4, 3, 5],
+    "imageUrl": "https://img.koket.se/standard-giant/kinesiska-pannkakor-3.jpg.webp",
+    "timeInMins": 30,
+    "categories": [ "Asia"],
+    "instructions": [ "Vispa ihop pannkakssmeten. Låt den svälla en stund.", "Hacka lök och vitlök och fräs den i olja. Fräs hastigt med lite matfett. Lägg i färsen och smula den med en gaffel. Krydda med salt och peppar. Småkoka 20 minuter. Finstrimla purjolök och salladskål. Vänd ner dem tillsammans med avrunna böngroddar. Smaka av med soja och låt allt puttra sakta ca 20 minuter.", 
+    "Grädda små tunna pannkakor. Klicka lite fyllning på varje pannkaka, rulla ihop och servera dem varma."],
+    "ingredients": [
+        {
+            "name": "Ägg",
+            "amount": 2,
+            "unit": "stycken"
+        },
+        {
+            "name": "Vetemjöl",
+            "amount": 2,
+            "unit": "dl"
+        },
+        {
+            "name": "Mjölk",
+            "amount": 5,
+            "unit": "dl"
+        },
+        {
+            "name": "Salt",
+            "amount": 1,
+            "unit": "tsk"
+        },
+        {
+            "name": "Lök(gul)",
+            "amount": 1,
+            "unit": "stycken"
+        },
+        {
+            "name": "Vitlök(klyfta)",
+            "amount": 1,
+            "unit": "stycken"
+        },
+        {
+            "name": "Fläskfärs",
+            "amount": 300,
+            "unit": "gram"
+        },
+        {
+            "name": "Purjolök",
+            "amount": 1,
+            "unit": "stycken"
+        },
+        {
+            "name": "Salladskål",
+            "amount": 1,
+            "unit": "litet huvud"
+        },
+        {
+            "name": "Böngroddar",
+            "amount": 1,
+            "unit": "förpackning"
+        }
+    ]
+}
+
+###
 # Söker bland alla recept
 GET {{baseUrl}}/recipes?query=toas HTTP/1.1
 
@@ -244,7 +942,7 @@ GET {{baseUrl}}/recipes/63309a293120fd5bba986857 HTTP/1.1
 ###
 
 # Tar bort ett recept
-DELETE {{baseUrl}}/recipes/632d9fcb6e7766b37d9837f5 HTTP/1.1
+DELETE {{baseUrl}}/recipes/6529b2f699612c970cb7fe69 HTTP/1.1
 
 ###
 
