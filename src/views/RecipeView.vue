@@ -1,17 +1,16 @@
 <template>
-<div class="container">
+	<div class="container">
 		<header>
 			<HeaderComponent />
 		</header>
 		<main class="content">
 			<section class="recipe">
 				<h1>{{ recipe.title }}</h1>
-				<div class="recipe-description">
-					<p>{{ recipe.description }}</p>
-					<img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
-				</div>
 				<div class="recipe-info">
-					<p>Rating: {{ recipe.avgRating || 'N/A' }} | Ingredienser | {{ recipe.timeInMins }} Minuter </p>
+					<p>
+						Rating: {{ recipe.avgRating || 'N/A' }} | Ingredienser |
+						{{ recipe.timeInMins }} Minuter
+					</p>
 				</div>
 				<div class="recipe-ingredients">
 					<h3>Ingredienser</h3>
@@ -29,35 +28,32 @@
 						</li>
 					</ol>
 				</div>
-				<div class="recipe-rating-container">
-					<h3>Vad tyckte du om receptet?</h3>
-					<p>Klicka på en stjärna för att ge ditt betyg!</p>
-					<div>
-						<div v-if="!hasVoted">
-							<RatingComponent @star-input="handleUserRating" :max-stars="5" />
-						</div>
-						<div v-else>
-							<p>Thank you for your vote</p>
-						</div>
-						<CommentSectionComponent />
-					</div>
-
-					<!-- Skicka in kod för att sätta ett betyg -->
-				</div>
 			</section>
-			<section class="comment-section">
-				<div class="write-comment-container">
-					<!-- Sätt in kod för att skriva en kommentar här -->
 
+			<section class="recipe-description">
+				<div class="description-content">
+					<p>{{ recipe.description }}</p>
 				</div>
-				<div class="previous-comments-container">
-					<!-- Sätt in kod som listar tidigare kommentarer -->
-				</div>
+				<img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
 			</section>
 		</main>
+
+		<section class="recipe-rating-container">
+			<h3>Vad tyckte du om receptet?</h3>
+			<p>Klicka på en stjärna för att ge ditt betyg!</p>
+			<div>
+				<div v-if="!hasVoted">
+					<RatingComponent @star-input="handleUserRating" :max-stars="5" />
+				</div>
+				<div v-else>
+					<p>Thank you for your vote</p>
+				</div>
+				<CommentSectionComponent />
+			</div>
+		</section>
 	</div>
 </template>
-
+  
 <script>
 import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
 import HeaderComponent from '@/components/HeaderComponent.vue';
@@ -79,7 +75,6 @@ export default {
 	},
 	created() {
 		const recipeId = this.$route.params.recipeId;
-		console.log('Recipe ID:', recipeId);
 
 		fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes/${recipeId}`)
 			.then(response => response.json())
@@ -88,7 +83,6 @@ export default {
 					data.avgRating = parseFloat(data.avgRating.toFixed(1));
 				}
 				this.recipe = data;
-				console.log('Recipe Data:', this.recipe);
 				this.loading = false;
 			})
 			.catch(error => {
@@ -104,9 +98,7 @@ export default {
 	},
 
 	methods: {
-
 		async storeRating() {
-
 			try {
 				const response = await fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes/${this.recipe._id}/ratings`, {
 					method: 'POST',
@@ -120,54 +112,44 @@ export default {
 				if (response.ok) {
 					this.hasVoted = true;
 				}
-				console.log(response);
 			} catch (error) {
 				console.error('Error submitting comment:', error);
 			}
-
-
-
 		},
-
-
-
 
 		handleUserRating(data) {
 			this.userRating = data;
 		},
 	},
-
-
-
-
 };
-
 </script>
-
+  
 <style>
 .container {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.recipe-description {
-	display: flex;
-}
-
-.recipe-description .recipe-image {
-	height: 500px;
-	width: 500px;
+.content {
+  display: flex;
+  flex-direction: row;
 }
 
 .recipe {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  flex: 1;
 }
 
-.recipe .recipe-info {
-	display: flex;
-	align-items: center;
+.recipe-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px; /* Adjusted the margin */
+}
+
+.recipe-description .recipe-image {
+  max-width: 50%;
+  height: auto;
 }
 </style>
+  

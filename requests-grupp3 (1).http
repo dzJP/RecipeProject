@@ -13,7 +13,7 @@ Content-Type: application/json
 {
     
     "title": "Swedish Pancakes",
-    "description": "Saft o bullar",
+    "description": "Goda och krispiga!",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://cdn-rdb.arla.com/Files/arla-se/3249856695/3a50bf71-8585-4719-93bb-014eaea05a6b.jpeg?w=1269&h=715&mode=crop&ak=f525e733&hm=b762ca1a",
     "timeInMins": 30,
