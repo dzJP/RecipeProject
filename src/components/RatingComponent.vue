@@ -68,6 +68,6 @@ export default {
 }
 
 .star.filled {
-	color: #07d400;
+	color: #059700;
 }
 </style>

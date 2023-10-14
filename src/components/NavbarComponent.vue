@@ -50,30 +50,29 @@ export default {
 
 <style scoped>
 .navbar {
-	display: flex;
-	/* background-color: #C4E0F3; */
-	width: 150px;
-	flex-wrap: wrap;
-	flex-direction: column;
-	height: 100vh;
-	background-image: url('../assets/blurry-gradient-haikei.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-	padding: 1rem;
-	border-top: 2px solid #C4E0F3;
-	border-right: 2px solid #C4E0F3;
-	margin-right: 5px;
+  display: flex;
+  width: 350px; 
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url('../assets/blurry-gradient-haikei.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  border-top: 2px solid #C4E0F3;
+  border-right: 2px solid #C4E0F3;
+  margin-right: 5px;
 }
 
 .navbar > * {
-	display: flex;
+  display: flex;
 }
 
 .non-bold-category {
-	flex-direction: column;
+  flex-direction: column;
 }
 
 .bold-text {
-	font-weight: bold;
+  font-weight: bold;
 }
 </style>

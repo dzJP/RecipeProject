@@ -6,15 +6,17 @@
             </div>
             <div class="recipe-details">
                 <h3 class="recipe-title">{{ recipe.title }}</h3>
+                <div class="rating-wrapper">
+                    <RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="false" />
+                </div>
                 <p class="recipe-description">{{ recipe.description }}</p>
                 <div class="recipe-info">
                     <p class="recipe-info-item">Ingredients: {{ recipe.ingredients.length }}</p>
                     <p class="recipe-info-item">Time: {{ recipe.timeInMins }} mins</p>
                 </div>
+            </div>
+            <div class="button-container">
                 <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
-                <div class="rating-wrapper">
-                    <RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="false" />
-                </div>
             </div>
         </div>
     </div>
@@ -61,6 +63,9 @@ export default {
     max-height: 500px;
     width: 100%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .recipe-image img {
@@ -73,11 +78,13 @@ export default {
 .recipe-title {
     font-size: 1.2rem;
     margin: 10px 0;
+    font-family: Cambria, sans-serif;
 }
 
 .recipe-description {
     font-size: 1rem;
     margin: 10px 0;
+    font-family: Cambria, sans-serif;
 }
 
 .recipe-info {
@@ -92,10 +99,11 @@ export default {
 }
 
 .rating-wrapper {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-body, h1, h2, h3, h4, h5, h6, p {
-    font-family: Cambria, sans-serif;
+.button-container {
+    align-self: flex-start;
+    margin-top: auto;
 }
 </style>

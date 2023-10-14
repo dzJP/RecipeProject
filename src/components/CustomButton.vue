@@ -14,7 +14,7 @@ export default {
 
 <style>
 .button {
-    background-color: #00A1F1;
+    background-color: #059700;
     color: #F3FAFF;
     border-radius: 10px;
     text-align: center;
