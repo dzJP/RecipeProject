@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<div class="h1-box">
-			<h1>Lorem ipsum dolor</h1>
+			<h1>Worldwide Pancakes </h1>
 		</div>
 		<div class="text-box">
 			<p>

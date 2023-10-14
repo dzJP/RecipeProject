@@ -1,21 +1,19 @@
 <template>
-    <div class="flex-box">
+    <div class="grid-box">
         <HeaderComponent />
-
-        <main class="main-box">
+        <div class="content">
             <NavbarComponent :categories="categories" />
-
-            <div class="test">
+            <div class="recipes-container">
                 <SearchComponent v-model="searchQuery" @search="handleSearch" />
                 <LoadingComponent v-if="loading" />
-
                 <RecipeContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
-                <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
-                <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
             </div>
-        </main>
+        </div>
+        <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
+        <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
     </div>
 </template>
+
 <script>
 import HeaderComponent from '../components/HeaderComponent.vue';
 import NavbarComponent from '../components/NavbarComponent.vue';
@@ -60,25 +58,24 @@ export default {
     },
 };
 </script>
-  
+
 <style scoped>
-.flex-box {
+.grid-box {
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    /* gap: 1rem; */
-}
-
-.main-box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-}
-
-.test {
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
     flex-direction: column;
 }
-</style>
 
+.content {
+    display: flex;
+}
+
+.recipes-container {
+    margin-left: 20px; 
+}
+
+.recipe-image {
+    width: 250px;
+    height: auto;
+}
+</style>
