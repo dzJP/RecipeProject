@@ -11,9 +11,8 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    
-    "title": "Swedish Pancakes",
-    "description": "Goda och krispiga!",
+    "title": "Svenska Pannkakor",
+    "description": "Ett enkelt grundrecept på tunna pannkakor. Stek och servera med sylt, grädde, glass eller kvarg.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://cdn-rdb.arla.com/Files/arla-se/3249856695/3a50bf71-8585-4719-93bb-014eaea05a6b.jpeg?w=1269&h=715&mode=crop&ak=f525e733&hm=b762ca1a",
     "timeInMins": 30,
@@ -55,13 +54,17 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Okonomiyaki(Japanese Pancakes)",
-    "description": "Fluffy composition and texture",
+    "title": "Japanska pannkakor",
+    "description": "Superluftiga pannkakor som är helt oemotståndligt goda.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2019/02/japanese-fluffy-pancakes-recipe-7087-2.jpg",
     "timeInMins": 45,
     "categories": [ "Asia"],
-    "instructions": [ "placeholder", "asdqwerty"],
+    "instructions": [ "Mixa äggulor, mjölk och olja luftigt i en bunke med en stavmixer.", "Sikta ner mjöl och vaniljsocker och mixa i ytterligare i 1–2 minuter.",
+    "Vispa i en annan bunke, av glas eller metall, äggvitorna till ett fast skum med elvisp. Tillsätt sockret, lite i taget, under fortsatt vispning tills du får en fast och blank marängsmet.",
+    "Vänd ner marängen i ägguleblandningen i fyra omgångar med en slickepott – arbeta försiktigt och försök att behålla så mycket luft i smeten som möjligt.",
+    "Smält lite smör på låg värme i en non stick-panna. Spritsa eller klicka ut små höga pannkakor i stekpannan (cirka ½ deciliter per pannkaka) och stek i cirka 4 minuter per sida. Vänd försiktigt, de är väldigt ömtåliga. När du steker andra sidan kan du lägga på ett lock så att även sidorna av pannkakorna tillagas.",
+    "Servera pannkakorna med smör, honung och färska bär."],
     "ingredients": [
         {
             "name": "Äggulor",
@@ -113,13 +116,18 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Baghrir(Moroccan Pancakes)",
-    "description": "Sweet and fluffy with tiny holes on top!",
+    "title": "Marockanska pannkakor",
+    "description": "De fluffigaste pannkakor du kan tänka dig och något av det enklaste och godaste du kan laga till din familj.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://silkroadrecipes.com/wp-content/uploads/2021/04/Baghrir-Moroccan-Pancakes16-768x1075.jpg",
     "timeInMins": 35,
     "categories": [ "Africa"],
-    "instructions": [ "placeholder", "asdqwerty"],
+    "instructions": [ "Blanda alla torra ingredienser i en bunke.", "Tillsätt 5–6 dl vatten, lite i taget och under omrörning – spara cirka 1 dl till senare.",
+    "Mixa smeten slät direkt i bunken med stavmixer. Täck bunken med en kökshandduk och låt smeten jäsa i 45 minuter till 1 timme.",
+    "När den är färdigjäst ska den vara alldeles bubblig på ytan och ganska tjock. Tillsätt det sparade vattnet och rör till en tunn jämn smet.",
+    "Värm upp en torr stekpannan (utan olja eller smör).",
+    "Häll en slev smet i pannan och grädda pannkakan – den ska bara gräddas på ena sidan. Först bildas det bubblor på ytan och sedan blir pannkakan torr. Lyft då över den till en stor bricka med en kökshandduk på. Gör likadant med hela smeten. Det är viktigt att pannkakorna inte ligger på varandra, för då klibbar de ihop.",
+    "Servera pannkakorna med antingen honung och smör eller med färska bär och sirap."],
     "ingredients": [
         {
             "name": "Mannagryn",
@@ -272,6 +280,7 @@ Content-Type: application/json
 
 {
     "title": "Sudanesiska pannkakor",
+    "description": "Smeten ska vispas samman dagen innan pannkakorna gräddas. Du ska använda majsmjöl till smeten, inte majsstärkelse.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-mega/majspannkaka-fran-sudan.jpg.webp",
     "timeInMins": 15,
@@ -311,12 +320,14 @@ Content-Type: application/json
 
 {
     "title": "Polska pannkakor",
-    "description": "Your house is going to smell like apples and cinnamon for 2 weeks.",
+    "description": "Ditt hus kommer att lukta som äpple och kanel i 2 veckor.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://ilovebake.pl/wp-content/uploads/2015/01/nalesniki-z-jablkami-i-cynamonem-9.jpg",
     "timeInMins": 30,
     "categories": [ "Europe"],
-    "instructions": [ "placeholder", "asdqwerty", "kurwabecausepoland"],
+    "instructions": [ "Blanda mjöl, torrjäst, vaniljsocker, socker och salt i en bunke. Eller lös upp färsk jäst i lite mjölk först. Tillsätt ljummen mjölk och vispa smeten slät med en handvisp. Tillsätt äggen och vispa lite till. Täck sedan bunken och låt smeten jäsa i rumstemperatur 1 timme.",
+    "Skala och finhacka äpplena, hacka dem i små fina tärningar. Vänd försiktigt i smeten, blanda inte mer än nödvändigt, försök att behålla smeten fluffig.",
+    "Hetta upp olja i en stekpanna och klicka i smeten. Stek pannkakorna tills de blir gyllene ca 3 min på varje sida. Tänk på att inte ha för hög värme på oljan, för då kan pannkakan stekas utanpå men fortfarande vara rå i mitten. Låt pannkakorna rinna av på papper. Pudra med florsocker och servera med sylt." ],
     "ingredients": [
         {
             "name": "Vetemjöl",
@@ -501,7 +512,7 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Venezuelanska pannkakor(Cachapas)",
+    "title": "Venezuelanska pannkakor",
     "description": "Dessa söta majspannkakor från Venezuela gör den perfekta frukosten . Cachapas är gjorda med enkla ingredienser - färsk majs, lite smör, grädde och salt - och ett bra alternativ till den genomsnittliga mjölbaserade pannkakan.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://idata.hiloved.com/imgs/672a61b433c2343c-1024x681.jpg",
@@ -548,7 +559,7 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Argentinska pannkakor(Panqueques Con Dulce De Leche)",
+    "title": "Argentinska pannkakor",
     "description": "Dessa perfekt mjuka och ömma Panqueques Con Dulce De Leche är alla karamellälskares dröm om du gillar dem till frukost eller efterrätt!",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://bakeitwithlove.com/wp-content/uploads/2020/11/Panqueques-con-Dulce-de-Leche-sm.jpg.webp",

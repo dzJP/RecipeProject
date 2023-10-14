@@ -12,13 +12,14 @@
                     <p class="recipe-info-item">Time: {{ recipe.timeInMins }} mins</p>
                 </div>
                 <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
-                <RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="false" />
-                
+                <div class="rating-wrapper">
+                    <RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="false" />
+                </div>
             </div>
         </div>
     </div>
 </template>
-  
+
 <script>
 import RatingComponent from '../components/RatingComponent.vue';
 import CustomButton from '../components/CustomButton.vue';
@@ -41,7 +42,7 @@ export default {
     },
 };
 </script>
-  
+
 <style scoped>
 .recipes-container {
     display: flex;
@@ -52,18 +53,19 @@ export default {
 
 .recipe-card {
     flex: 0 1 calc(33.33% - 20px);
-    /* Adjust width as needed */
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 300px;
+    max-height: 500px;
     width: 100%;
     box-sizing: border-box;
 }
 
 .recipe-image img {
     width: 100%;
+    max-height: 200px;
     height: auto;
     border-radius: 8px;
 }
@@ -88,5 +90,12 @@ export default {
     font-size: 0.9rem;
     color: #555;
 }
+
+.rating-wrapper {
+    margin-top: 20px;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    font-family: Cambria, sans-serif;
+}
 </style>
-  
