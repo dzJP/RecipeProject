@@ -1,6 +1,6 @@
 <template>
     <div class="searchbar">
-        <input v-model="searchQuery" id="search-field" placeholder="Search recipes..." />
+        <input v-model="searchQuery" id="search-field" placeholder="Search recipes..."  class="search-field"/>
     </div>
 </template>
 
@@ -29,6 +29,16 @@ export default {
 .searchbar input {
     width: 100%;
     height: 20px;
-    border-radius: 0.25rem
+    border-radius: 3rem;
+    padding: 5px;
 }
+
+.search-field {
+    border: 1px solid grey;
+}
+
+.search-field:focus {
+    border: 1px solid green;
+}
+
 </style>

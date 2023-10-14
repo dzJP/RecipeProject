@@ -1,8 +1,5 @@
 <template>
 	<div class="container">
-		<header>
-			<HeaderComponent />
-		</header>
 		<main class="content">
 			<section class="recipe section-recipe">
 				<h1>{{ recipe.title }}</h1>
@@ -61,12 +58,10 @@
 	
 <script>
 import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
-import HeaderComponent from '@/components/HeaderComponent.vue';
 import RatingComponent from '@/components/RatingComponent.vue'
 
 export default {
 	components: {
-		HeaderComponent,
 		CommentSectionComponent,
 		RatingComponent,
 	},

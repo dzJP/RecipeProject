@@ -9,7 +9,7 @@
                     <h2>{{ recipe.title }}</h2>
                 </div>
                 <div>
-                    <p>{{ recipe.description }}</p>
+                    <p class="text">{{ recipe.description }}</p>
                 </div>
             </div>
             <div class="rating-container">
@@ -78,10 +78,6 @@ export default {
     max-width: 20%;
 }
 
-.recipe-heading h2 {
-    
-}
-
 .button {
     display: block;
 }
@@ -130,5 +126,24 @@ export default {
 .recipe-image:hover {
     transform: scale(1.1);
 }
+
+
+@media (max-width : 1000px) {
+    .text {
+        display: none;
+    }
+    
+    .rating-container {
+        display: none;
+    }
+
+    .information-container {
+        display: none;
+    }
+    .recipe-container {
+        
+    }
+}
+
 </style>
   

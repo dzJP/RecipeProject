@@ -50,12 +50,11 @@ export default {
 
 <style scoped>
 .navbar {
-	grid-row: 1 / 2;
+	grid-column: 1 / 2;
 	display: flex;
 	/* background-color: #C4E0F3; */
 	flex-wrap: wrap;
 	flex-direction: column;
-	height: 100vh;
 	background-image: url('../assets/blurry-gradient-haikei.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -78,7 +77,7 @@ export default {
 
 @media (max-width: 1000px) {
   .navbar {
-    grid-row: 1 / 2;
+    grid-column: 1 / 3;
 	height: auto;
 	flex-direction: row;
 	display: flex;
