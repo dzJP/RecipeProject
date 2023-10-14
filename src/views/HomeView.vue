@@ -7,13 +7,14 @@
                 <SearchComponent v-model="searchQuery" @search="handleSearch" />
                 <LoadingComponent v-if="loading" />
                 <RecipeContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
+                <RatingComponent :value="recipe?.avgRating" :max-stars="5" :is-interactive="false" />
             </div>
         </div>
         <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
         <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
     </div>
 </template>
-
+  
 <script>
 import HeaderComponent from '../components/HeaderComponent.vue';
 import NavbarComponent from '../components/NavbarComponent.vue';
@@ -22,6 +23,7 @@ import RecipeContainerComponent from '../components/RecipesContainerComponent.vu
 import LoadingComponent from '../components/LoadingComponent.vue';
 import FetchRecipesComponent from '../components/FetchRecipesComponent.vue';
 import FetchCategoriesComponent from '../components/FetchCategoriesComponent.vue';
+import RatingComponent from '../components/RatingComponent.vue';
 
 export default {
     components: {
@@ -32,6 +34,7 @@ export default {
         LoadingComponent,
         FetchRecipesComponent,
         FetchCategoriesComponent,
+        RatingComponent,
     },
     data() {
         return {
@@ -40,6 +43,14 @@ export default {
             categories: [],
             searchQuery: '',
         };
+    },
+    computed: {
+        recipe() {
+            return this.recipes[0]; // Assuming you want the first recipe
+        },
+        isRatingInteractive() {
+            return !this.recipe; // Set this based on your actual condition
+        }
     },
     methods: {
         handleSearch(query) {
@@ -58,7 +69,7 @@ export default {
     },
 };
 </script>
-
+  
 <style scoped>
 .grid-box {
     height: 100vh;
@@ -71,7 +82,7 @@ export default {
 }
 
 .recipes-container {
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 .recipe-image {
@@ -79,3 +90,4 @@ export default {
     height: auto;
 }
 </style>
+  

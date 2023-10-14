@@ -45,7 +45,8 @@
 			<p>Klicka på en stjärna för att ge ditt betyg!</p>
 			<div>
 				<div v-if="!hasVoted">
-					<RatingComponent @star-input="handleUserRating" :max-stars="5" />
+					<RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="true"
+						@star-input="handleUserRating" />
 				</div>
 				<div v-else>
 					<p>Thank you for your vote</p>
@@ -56,9 +57,6 @@
 	</div>
 </template>
   
-  
-	
-	
 <script>
 import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
 import HeaderComponent from '@/components/HeaderComponent.vue';
@@ -94,18 +92,16 @@ export default {
 				console.error('Error fetching recipe:', error);
 				this.loading = false;
 			});
-	},
 
-	watch: {
-		'userRating'() {
-			this.storeRating();
-		},
+		// Load user's previous rating if any
+		this.loadUserRating();
 	},
 
 	methods: {
 		async storeRating() {
 			try {
-				const response = await fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes/${this.recipe._id}/ratings`, {
+				const recipeId = this.$route.params.recipeId;
+				const response = await fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes/${recipeId}/ratings`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
@@ -122,83 +118,98 @@ export default {
 			}
 		},
 
+		async loadUserRating() {
+			try {
+				const recipeId = this.$route.params.recipeId;
+				const response = await fetch(`https://jau22-recept-grupp3-j35j900nj4w3.reky.se/recipes/${recipeId}/user-rating`);
+				if (response.ok) {
+					const data = await response.json();
+					this.userRating = data.rating;
+					this.hasVoted = true;
+				}
+			} catch (error) {
+				console.error('Error fetching user rating:', error);
+			}
+		},
+
 		handleUserRating(data) {
 			this.userRating = data;
+			this.storeRating(); // Store the user's rating
 		},
 	},
 };
 </script>
-	
+
 <style>
 .container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .recipe {
-  flex: 1;
-  margin-right: 20px;
+	flex: 1;
+	margin-right: 20px;
 
 }
 
 .recipe-ingredients {
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 1rem;
-  border-radius: 50px;
-  max-width: 300px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 1rem;
+	border-radius: 50px;
+	max-width: 300px;
 }
 
 .recipe-ingredients h3 {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .recipe-description {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-right: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-right: 20px;
 }
 
 .recipe-description .recipe-image {
-  width: 800px; 
-  height: auto; 
+	width: 800px;
+	height: auto;
 
 }
 
 .recipe-instructions {
-  background-image: url('../assets/blurry-gradient-haikei.png'); 
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 1rem;
-  border-radius: 10px;
-  margin-top: 20px;
+	background-image: url('../assets/blurry-gradient-haikei.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 1rem;
+	border-radius: 10px;
+	margin-top: 20px;
 }
 
 .recipe-instructions h3 {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .section-recipe,
 .section-recipe-rating-container {
-  background-image: url('../assets/blurry-gradient-haikei.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 1rem;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  max-width: 300px;
+	background-image: url('../assets/blurry-gradient-haikei.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 1rem;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	max-width: 300px;
 }
 
 .recipe-description.section-recipe {
-  background-image: none;
-  
+	background-image: none;
+
 }
 </style>
 	
