@@ -2,7 +2,7 @@
     <div class="big-recipes-container">
         <section v-for="recipe in filteredRecipes" :key="recipe._id" class="recipe-container">
             <div class="img-container">
-                <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
+                <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image"  />
             </div>
             <div class="recipe-heading">
                 <div>
@@ -10,9 +10,6 @@
                 </div>
                 <div>
                     <p>{{ recipe.description }}</p>
-                </div>
-                <div>
-                    <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
                 </div>
             </div>
             <div class="rating-container">
@@ -29,10 +26,12 @@
                     <p>Category: {{ recipe.categories.join(', ') }}</p>
                 </div>
             </div>
+                <div>
+                    <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
+                </div>
         </section>
     </div>
 </template>
-  
   
 <script>
 import CustomButton from '../components/CustomButton.vue';
@@ -67,25 +66,69 @@ export default {
 .recipe-container {
     display: flex;
     flex-wrap: wrap;
-}
-
-.recipe-heading {
-    padding: 5px;
     flex-grow: 1;
 }
 
+.recipe-content {
+    display: flex;
+}
+
+.recipe-heading {
+    flex-direction: column;
+    max-width: 20%;
+}
+
+.recipe-heading h2 {
+    
+}
+
+.button {
+    display: block;
+}
+
+.recipe-heading p {
+    margin-bottom: 20px;
+}
+
 .rating-container {
+    text-align: center;
     flex-grow: 1;
 }
 
 .information-container {
+    flex-direction: column;
     flex-grow: 1;
 }
 
+
 .recipe-image {
     border: 1px solid #6D94BC;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
+}
+
+.recipe-image {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 9999px;
+}
+
+.recipe-image:hover {
+    transform: scale(1.1);
+}
+
+.img-container {
+    padding: 10px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.recipe-image {
+    max-width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe-image:hover {
+    transform: scale(1.1);
 }
 </style>
   

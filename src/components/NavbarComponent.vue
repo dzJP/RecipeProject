@@ -9,8 +9,8 @@
 		<div v-if="categories.length > 0" class="non-bold-category">
 			<div v-for="category in categories" :key="category.name">
 				<router-link :to="'/category/' + category.name">
-					<div :class="{ 'bold-text': category.name === getCategoryFromRoute($route.path) }">
-						{{ category.name }} ({{ category.recipeCount }} recipes)
+					<div :class="{ 'bold-text': category.name === getCategoryFromRoute($route.path) }" class="meme">
+						{{ category.name }} ({{ category.recipeCount }})
 					</div>
 				</router-link>
 			</div>
@@ -50,13 +50,13 @@ export default {
 
 <style scoped>
 .navbar {
+	grid-row: 1 / 2;
 	display: flex;
 	/* background-color: #C4E0F3; */
-	width: 150px;
 	flex-wrap: wrap;
 	flex-direction: column;
 	height: 100vh;
-	background-image: url('../assets/blurry-gradient-haikei.png');
+	background-image: url('../assets/blurry-gradient-haikei.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 1rem;
@@ -64,7 +64,6 @@ export default {
 	border-right: 2px solid #C4E0F3;
 	margin-right: 5px;
 }
-
 .navbar > * {
 	display: flex;
 }
@@ -76,4 +75,27 @@ export default {
 .bold-text {
 	font-weight: bold;
 }
+
+@media (max-width: 1000px) {
+  .navbar {
+    grid-row: 1 / 2;
+	height: auto;
+	flex-direction: row;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5px;
+	column-gap: 20px;
+  }
+
+  .non-bold-category {
+	flex-direction: row;
+	column-gap: 20px;
+  }
+  
+  .bold-text {
+	flex-direction: row;
+  }
+}
+
+
 </style>

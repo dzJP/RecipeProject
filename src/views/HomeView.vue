@@ -5,7 +5,7 @@
         <main class="main-box">
             <NavbarComponent :categories="categories" />
 
-            <div class="test">
+            <div class="content">
                 <SearchComponent v-model="searchQuery" @search="handleSearch" />
                 <LoadingComponent v-if="loading" />
 
@@ -69,16 +69,29 @@ export default {
 }
 
 .main-box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 160px auto;
+    grid-template-rows: auto;
+    /* grid-template-rows: 150px auto; */
 }
 
-.test {
+.content {
+    grid-row: 2 3;
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
     flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+    .main-box {
+        grid-template-columns: auto;
+        grid-template-rows: 160px auto;
+    }
+
+    .content {
+        grid-row: 2 / 3;
+    }
 }
 </style>
 

@@ -29,5 +29,6 @@ export default {
 .searchbar input {
     width: 100%;
     height: 20px;
+    border-radius: 0.25rem
 }
 </style>

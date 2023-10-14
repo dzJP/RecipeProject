@@ -14,17 +14,20 @@ export default {
 
 <style>
 .button {
-    background-color: #00A1F1;
+    background-color: #19a413;
     color: #F3FAFF;
     border-radius: 10px;
     text-align: center;
     border: none;
-    padding: 15px;
+    padding: 1rem;
+    margin: 1rem;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .button:hover {
     /* background-color: #6D94BC; */
-    background-color: #6D94BC;
+    background-color: #FFD786;
 }
+
 </style>

@@ -1,16 +1,12 @@
 <template>
 	<header class="header">
 		<div class="h1-box">
-			<h1>Lorem ipsum dolor</h1>
+			<h1>Worldwide Pancakes</h1>
 		</div>
 		<div class="text-box">
 			<p>
-			Sit amet, consectetur adipisicing elit. Dolorem cupiditate quo rerum
-			hic adipisci, obcaecati architecto eligendi qui dolore veritatis non
-			porro enim repellat magni delectus vero provident aperiam placeat.
-			Sit amet, consectetur adipisicing elit. Dolorem cupiditate quo rerum
-			hic adipisci, obcaecati architecto eligendi qui dolore veritatis non
-			porro enim repellat magni delectus vero provident aperiam placeat.
+			Don't panicake! Välkomna till våran värld av pannkakor. <br/><br>
+			Sugen på söta eller saltiga pannkakor? Oroa dig inte, vi har alla recept samlade på en och samma hemsida för att göra det enkelt för just dig.
 			</p>
 		</div>
 	</header>
@@ -29,8 +25,9 @@ export default {
 	text-align: center;
 	flex-wrap: wrap;
 	height: auto;
+	color: #F3FAFF;
 	/* background-color: #C4E0F3; */
-	background-image: url('../assets/blurry-gradient-haikei.png');
+	background-image: url('../assets/layered-peaks-haikei.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-bottom: 5px;
