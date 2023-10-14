@@ -8,15 +8,15 @@
                 <div>
                     <h2>{{ recipe.title }}</h2>
                 </div>
+                <div class="rating-container">
+                    <RatingComponent v-model="recipe.avgRating" :max-stars="5" />
+                </div>
                 <div>
                     <p>{{ recipe.description }}</p>
                 </div>
                 <div>
                     <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
                 </div>
-            </div>
-            <div class="rating-container">
-                <p>Rating: {{ recipe.avgRating || 'N/A' }}</p>
             </div>
             <div class="information-container">
                 <div>
@@ -32,15 +32,16 @@
         </section>
     </div>
 </template>
-  
-  
+
 <script>
 import CustomButton from '../components/CustomButton.vue';
+import RatingComponent from './RatingComponent.vue'; // Make sure to adjust the import path
 
 export default {
     props: ['recipes', 'searchQuery'],
     components: {
         CustomButton,
+        RatingComponent,
     },
     computed: {
         filteredRecipes() {
@@ -53,7 +54,6 @@ export default {
         },
     },
 };
-
 </script>
 
 <style scoped>
@@ -88,4 +88,3 @@ export default {
     height: 250px;
 }
 </style>
-  
