@@ -8,7 +8,7 @@
                 <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
                 <SearchComponent v-model="searchQuery" @search="handleSearch" />
                 <LoadingComponent v-if="loading" />
-                <RecipeContainerComponent :recipes="recipes" :searchQuery="searchQuery" />
+                <RecipesContainerComponent :recipes="recipes" :searchQuery="searchQuery" />
                 <RatingComponent :value="recipe?.avgRating" :max-stars="5" :is-interactive="false" />
             </div>
         </div>
@@ -19,7 +19,7 @@
 import HeaderComponent from '../components/HeaderComponent.vue';
 import NavbarComponent from '../components/NavbarComponent.vue';
 import SearchComponent from '../components/SearchComponent.vue';
-import RecipeContainerComponent from '../components/RecipesContainerComponent.vue';
+import RecipesContainerComponent from '../components/RecipesContainerComponent.vue'; // Import the component
 import LoadingComponent from '../components/LoadingComponent.vue';
 import FetchRecipesComponent from '../components/FetchRecipesComponent.vue';
 import FetchCategoriesComponent from '../components/FetchCategoriesComponent.vue';
@@ -30,7 +30,7 @@ export default {
         HeaderComponent,
         NavbarComponent,
         SearchComponent,
-        RecipeContainerComponent,
+        RecipesContainerComponent, 
         LoadingComponent,
         FetchRecipesComponent,
         FetchCategoriesComponent,
@@ -69,25 +69,6 @@ export default {
     },
 };
 </script>
-  
+
 <style scoped>
-.grid-box {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    display: flex;
-}
-
-.recipes-container {
-    margin-left: 20px;
-}
-
-.recipe-image {
-    width: 250px;
-    height: auto;
-}
 </style>
-  

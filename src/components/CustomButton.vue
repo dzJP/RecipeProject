@@ -19,7 +19,7 @@ export default {
     border-radius: 10px;
     text-align: center;
     border: none;
-    padding: 15px;
+    padding: 10px;
     transition: background-color 0.3s ease;
 }
 
