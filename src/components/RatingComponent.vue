@@ -1,12 +1,13 @@
 <template>
 	<div class="star-rating">
-		<i v-for="index in maxStars" :key="index" @click="clickable && rate(index)"
-			:class="['star', { 'filled': index <= value }]">
+		<i v-for="index in maxStars" :key="index" @click="handleClick(index)"
+			@mouseover="enableHover && handleMouseOver(index)" @mouseleave="enableHover && handleMouseLeave()"
+			:class="['star', { 'filled': index <= (hoverRating || rating) }]">
 			&#9733; <!-- Unicode star character -->
 		</i>
 	</div>
 </template>
-  
+
 <script>
 export default {
 	props: {
@@ -18,41 +19,55 @@ export default {
 			type: Number,
 			default: 5,
 		},
-		clickable: {
+		isInteractive: {
 			type: Boolean,
 			default: true,
 		},
+		enableHover: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	data() {
+		return {
+			rating: this.value,
+			hoverRating: null,
+		};
 	},
 	methods: {
-		rate(index) {
-			this.$emit('star-input', index);
+		handleClick(index) {
+			if (this.isInteractive) {
+				this.rating = index;
+				this.$emit('star-input', this.rating);
+			}
+		},
+		handleMouseOver(index) {
+			if (this.isInteractive && this.enableHover) {
+				this.hoverRating = index;
+			}
+		},
+		handleMouseLeave() {
+			if (this.isInteractive && this.enableHover) {
+				this.hoverRating = null;
+			}
 		},
 	},
 };
 </script>
-  
-<style scoped>
-/* Your existing styles here */
-</style>
-  
-  
+
 <style scoped>
 .star-rating {
 	font-size: 0;
-	/* Remove whitespace between inline-block stars */
 }
 
 .star {
 	display: inline-block;
 	cursor: pointer;
 	font-size: 24px;
-	/* Adjust the size of the stars as needed */
 	color: #ccc;
-	/* Default star color (empty) */
 }
 
 .star.filled {
 	color: #fdd835;
-	/* Filled star color (e.g., yellow) */
 }
 </style>

@@ -4,17 +4,17 @@
         <div class="content">
             <NavbarComponent :categories="categories" />
             <div class="recipes-container">
+                <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
+                <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
                 <SearchComponent v-model="searchQuery" @search="handleSearch" />
                 <LoadingComponent v-if="loading" />
-                <RecipeContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
+                <RecipeContainerComponent :recipes="recipes" :searchQuery="searchQuery" />
                 <RatingComponent :value="recipe?.avgRating" :max-stars="5" :is-interactive="false" />
             </div>
         </div>
-        <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
-        <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
     </div>
 </template>
-  
+
 <script>
 import HeaderComponent from '../components/HeaderComponent.vue';
 import NavbarComponent from '../components/NavbarComponent.vue';
@@ -46,10 +46,10 @@ export default {
     },
     computed: {
         recipe() {
-            return this.recipes[0]; // Assuming you want the first recipe
+            return this.recipes[0]; 
         },
         isRatingInteractive() {
-            return !this.recipe; // Set this based on your actual condition
+            return !this.recipe; 
         }
     },
     methods: {

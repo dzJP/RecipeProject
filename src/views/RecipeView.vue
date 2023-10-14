@@ -45,8 +45,7 @@
 			<p>Klicka på en stjärna för att ge ditt betyg!</p>
 			<div>
 				<div v-if="!hasVoted">
-					<RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="true"
-						@star-input="handleUserRating" />
+					<RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="true" :enable-hover="true" @star-input="handleUserRating" />
 				</div>
 				<div v-else>
 					<p>Thank you for your vote</p>
@@ -56,7 +55,7 @@
 		</section>
 	</div>
 </template>
-  
+
 <script>
 import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
 import HeaderComponent from '@/components/HeaderComponent.vue';
@@ -136,6 +135,10 @@ export default {
 			this.userRating = data;
 			this.storeRating(); // Store the user's rating
 		},
+
+		handleMouseOver() {
+			// Handle mouseover
+		}
 	},
 };
 </script>
@@ -212,4 +215,3 @@ export default {
 
 }
 </style>
-	
