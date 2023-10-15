@@ -17,16 +17,8 @@
             <div class="rating-container">
                 <p>Rating: {{ recipe.avgRating || 'N/A' }}</p>
             </div>
-            <div class="information-container">
-                <div>
-                    <p>Ingredients: {{ recipe.ingredients.length }}</p>
-                </div>
-                <div>
-                    <p>Time: {{ recipe.timeInMins }} mins</p>
-                </div>
-                <div>
-                    <p>Category: {{ recipe.categories.join(', ') }}</p>
-                </div>
+            <div class="button-container">
+                <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
             </div>
                 <div>
                     <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
@@ -36,11 +28,13 @@
 </template>
   
 <script>
+import RatingComponent from '../components/RatingComponent.vue';
 import CustomButton from '../components/CustomButton.vue';
 
 export default {
     props: ['recipes', 'searchQuery'],
     components: {
+        RatingComponent,
         CustomButton,
     },
     computed: {
@@ -54,18 +48,26 @@ export default {
         },
     },
 };
-
 </script>
 
 <style scoped>
-.big-recipes-container {
+.recipes-container {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    row-gap: 1rem;
+    gap: 20px;
+    justify-content: space-between;
 }
 
-.recipe-container {
+.recipe-card {
+    flex: 0 1 calc(33.33% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    max-height: 500px;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
@@ -153,4 +155,3 @@ export default {
 }
 
 </style>
-  

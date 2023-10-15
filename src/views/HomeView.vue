@@ -10,27 +10,34 @@
                 <RecipeContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
                 <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
                 <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
+                <SearchComponent v-model="searchQuery" @search="handleSearch" />
+                <LoadingComponent v-if="loading" />
+                <RecipesContainerComponent :recipes="recipes" :searchQuery="searchQuery" />
+                <RatingComponent :value="recipe?.avgRating" :max-stars="5" :is-interactive="false" />
             </div>
         </main>
 </template>
+
 <script>
 import HeaderComponent from '../components/HeaderComponent.vue';
 import NavbarComponent from '../components/NavbarComponent.vue';
 import SearchComponent from '../components/SearchComponent.vue';
-import RecipeContainerComponent from '../components/RecipesContainerComponent.vue';
+import RecipesContainerComponent from '../components/RecipesContainerComponent.vue'; // Import the component
 import LoadingComponent from '../components/LoadingComponent.vue';
 import FetchRecipesComponent from '../components/FetchRecipesComponent.vue';
 import FetchCategoriesComponent from '../components/FetchCategoriesComponent.vue';
+import RatingComponent from '../components/RatingComponent.vue';
 
 export default {
     components: {
         HeaderComponent,
         NavbarComponent,
         SearchComponent,
-        RecipeContainerComponent,
+        RecipesContainerComponent, 
         LoadingComponent,
         FetchRecipesComponent,
         FetchCategoriesComponent,
+        RatingComponent,
     },
     data() {
         return {
@@ -39,6 +46,14 @@ export default {
             categories: [],
             searchQuery: '',
         };
+    },
+    computed: {
+        recipe() {
+            return this.recipes[0]; 
+        },
+        isRatingInteractive() {
+            return !this.recipe; 
+        }
     },
     methods: {
         handleSearch(query) {
@@ -85,4 +100,3 @@ export default {
     }
 }
 </style>
-

@@ -72,11 +72,11 @@ a {
 	margin-right: 5px;
 }
 .navbar > * {
-	display: flex;
+  display: flex;
 }
 
 .non-bold-category {
-	flex-direction: column;
+  flex-direction: column;
 }
 
 .bold-text {

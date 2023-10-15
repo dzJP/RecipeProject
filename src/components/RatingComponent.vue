@@ -1,59 +1,73 @@
 <template>
-    <div class="star-rating">
-      <!-- Render stars based on the 'rating' data property -->
-      <i
-        v-for="index in maxStars"
-        :key="index"
-        @click="rate(index)"
-        :class="['star', { 'filled': index <= rating }]"
-      >
-        &#9733; <!-- Unicode star character -->
-      </i>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      value: {
-        type: Number,
-        default: 0,
-      },
-      maxStars: {
-        type: Number,
-        default: 5,
-      },
-    },
-    data() {
-      return {
-        rating: '',
-      };
-    },
-    methods: {
-      rate(index) {
-        // Emit a custom event to update the parent component's 'value' prop
-        this.rating = index;
-        this.$emit('star-input', this.rating);
-      },
-    },
-  };
-  </script>
-  
+	<div class="star-rating">
+		<i v-for="index in maxStars" :key="index" @click="handleClick(index)"
+			@mouseover="enableHover && handleMouseOver(index)" @mouseleave="enableHover && handleMouseLeave()"
+			:class="['star', { 'filled': index <= (hoverRating || rating) }]">
+			&#9733; <!-- Unicode star character -->
+		</i>
+	</div>
+</template>
 
-  
-  <style scoped>
-  .star-rating {
-    font-size: 0; /* Remove whitespace between inline-block stars */
-  }
-  
-  .star {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 24px; /* Adjust the size of the stars as needed */
-    color: #ccc; /* Default star color (empty) */
-  }
-  
-  .star.filled {
-    color: #fdd835; /* Filled star color (e.g., yellow) */
-  }
-  </style>
+<script>
+export default {
+	props: {
+		value: {
+			type: Number,
+			default: 0,
+		},
+		maxStars: {
+			type: Number,
+			default: 5,
+		},
+		isInteractive: {
+			type: Boolean,
+			default: true,
+		},
+		enableHover: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	data() {
+		return {
+			rating: this.value,
+			hoverRating: null,
+		};
+	},
+	methods: {
+		handleClick(index) {
+			if (this.isInteractive) {
+				this.rating = index;
+				this.$emit('star-input', this.rating);
+			}
+		},
+		handleMouseOver(index) {
+			if (this.isInteractive && this.enableHover) {
+				this.hoverRating = index;
+			}
+		},
+		handleMouseLeave() {
+			if (this.isInteractive && this.enableHover) {
+				this.hoverRating = null;
+			}
+		},
+	},
+};
+</script>
+
+<style scoped>
+.star-rating {
+	font-size: 0;
+}
+
+.star {
+	display: inline-block;
+	cursor: pointer;
+	font-size: 24px;
+	color: #ccc;
+}
+
+.star.filled {
+	color: #059700;
+}
+</style>
