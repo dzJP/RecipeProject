@@ -1,9 +1,11 @@
 <template>
     <div class="big-recipes-container">
         <section v-for="recipe in filteredRecipes" :key="recipe._id" class="recipe-container">
+            <router-link :to="'/recipe/' + recipe._id">
             <div class="img-container">
                 <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image"  />
             </div>
+            </router-link>
             <div class="recipe-heading">
                 <div>
                     <h2>{{ recipe.title }}</h2>
