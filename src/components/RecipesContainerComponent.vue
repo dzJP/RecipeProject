@@ -98,7 +98,8 @@ export default {
 
 
 .recipe-image {
-    border: 1px solid #6D94BC;
+    border: 1px solid #FFD786;
+    box-shadow: 5px 5px 5px black;
     width: 200px;
     height: 200px;
 }
@@ -113,8 +114,8 @@ export default {
 }
 
 .img-container {
-    padding: 10px;
-    margin: 5px;
+    padding: 15px;
+    margin: 10px;
     overflow: hidden;
 }
 
@@ -139,7 +140,11 @@ export default {
 
     .information-container {
         display: none;
+        flex-direction: row;
+        flex-grow: 0;
+        flex-wrap: wrap;
     }
+
     .recipe-container {
         
     }

@@ -5,7 +5,7 @@
 		</div>
 		<div class="text-box">
 			<p>
-			Don't panicake! Välkomna till våran värld av pannkakor. <br/><br>
+			Don't panicake! Välkomna till våran värld av pannkakor. 
 			Sugen på söta eller saltiga pannkakor? Oroa dig inte, vi har alla recept samlade på en och samma hemsida för att göra det enkelt för just dig.
 			</p>
 		</div>
@@ -20,16 +20,19 @@ export default {
 
 <style scoped>
 .header {
+	grid-row: 1 / 2;
+	grid-column: 1 / 3;
 	display: flex;
-	flex-basis: 100%;
-	text-align: center;
+	width: 100%;
+	text-align: left;
 	flex-wrap: wrap;
 	height: auto;
 	color: #F3FAFF;
 	/* background-color: #C4E0F3; */
-	background-image: url('../assets/layered-peaks-haikei.svg');
+	background-image: url('../assets/blurry-gradient-haikei3.svg');
+	border-bottom: 2px solid #F3FAFF;
+	border-radius: 10px;
 	background-size: cover;
-	background-repeat: no-repeat;
 	margin-bottom: 5px;
 }
 
@@ -39,8 +42,12 @@ export default {
 
 .header > * {
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	flex-basis: 100%;
+}
+
+.header h1 {
+	margin-left: 30px;
 }
 
 </style>

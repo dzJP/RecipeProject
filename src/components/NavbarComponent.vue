@@ -49,18 +49,26 @@ export default {
 </script>
 
 <style scoped>
+
+a {
+	text-decoration: none;
+	color: #F3FAFF;
+}
+
 .navbar {
 	grid-column: 1 / 2;
 	display: flex;
 	/* background-color: #C4E0F3; */
 	flex-wrap: wrap;
 	flex-direction: column;
+	border-radius: 10px;
 	background-image: url('../assets/blurry-gradient-haikei.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 1rem;
-	border-top: 2px solid #C4E0F3;
-	border-right: 2px solid #C4E0F3;
+	border-top: 2px solid #F3FAFF;
+	border-right: 2px solid #F3FAFF;
+	box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 	margin-right: 5px;
 }
 .navbar > * {
@@ -72,7 +80,7 @@ export default {
 }
 
 .bold-text {
-	font-weight: bold;
+	font-weight: 900;
 }
 
 @media (max-width: 1000px) {

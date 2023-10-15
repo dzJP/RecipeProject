@@ -168,7 +168,7 @@ export default {
 }
 
 .recipe-instructions {
-  background-image: url('../assets/blurry-gradient-haikei.png'); 
+  background-image: url('../assets/blurry-gradient-haikei.svg'); 
   background-size: cover;
   background-repeat: no-repeat;
   padding: 1rem;
@@ -182,7 +182,7 @@ export default {
 
 .section-recipe,
 .section-recipe-rating-container {
-  background-image: url('../assets/blurry-gradient-haikei.png');
+  background-image: url('../assets/blurry-gradient-haikei.svg');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 1rem;

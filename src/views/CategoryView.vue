@@ -93,16 +93,10 @@ export default {
 </script>
   
 <style scoped>
-.flex-box {
-    display: flex;
-    flex-wrap: wrap;
-    /* gap: 1rem; */
-}
-
 .main-box {
     display: grid;
-    grid-template-columns: 160px auto;
-    grid-template-rows: auto;
+    grid-template-columns: 180px auto;
+    grid-template-rows: auto auto;
     /* grid-template-rows: 150px auto; */
 }
 
@@ -117,7 +111,7 @@ export default {
 @media (max-width: 1000px) {
     .main-box {
         grid-template-columns: auto;
-        grid-template-rows: 160px auto;
+        grid-template-rows: auto auto;
     }
 
     .content {
