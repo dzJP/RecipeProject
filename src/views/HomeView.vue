@@ -1,9 +1,13 @@
 <template>
-    <div class="grid-box">
-        <HeaderComponent />
-        <div class="content">
+        <main class="main-box">
+            <HeaderComponent/>
             <NavbarComponent :categories="categories" />
-            <div class="recipes-container">
+
+            <div class="content">
+                <SearchComponent v-model="searchQuery" @search="handleSearch" />
+                <LoadingComponent v-if="loading" />
+
+                <RecipeContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
                 <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
                 <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
                 <SearchComponent v-model="searchQuery" @search="handleSearch" />
@@ -11,8 +15,7 @@
                 <RecipesContainerComponent :recipes="recipes" :searchQuery="searchQuery" />
                 <RatingComponent :value="recipe?.avgRating" :max-stars="5" :is-interactive="false" />
             </div>
-        </div>
-    </div>
+        </main>
 </template>
 
 <script>
@@ -69,6 +72,31 @@ export default {
     },
 };
 </script>
-
+  
 <style scoped>
+.main-box {
+    display: grid;
+    grid-template-columns: 180px auto;
+    grid-template-rows: auto auto;
+    /* grid-template-rows: 150px auto; */
+}
+
+.content {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+    .main-box {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+
+    .content {
+        grid-column: 1 / 3;
+    }
+}
 </style>

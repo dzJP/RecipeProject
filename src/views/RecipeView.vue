@@ -1,8 +1,5 @@
 <template>
 	<div class="container">
-		<header>
-			<HeaderComponent />
-		</header>
 		<main class="content">
 			<section class="recipe section-recipe">
 				<h1>{{ recipe.title }}</h1>
@@ -58,12 +55,10 @@
 
 <script>
 import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
-import HeaderComponent from '@/components/HeaderComponent.vue';
 import RatingComponent from '@/components/RatingComponent.vue'
 
 export default {
 	components: {
-		HeaderComponent,
 		CommentSectionComponent,
 		RatingComponent,
 	},
@@ -187,12 +182,12 @@ export default {
 }
 
 .recipe-instructions {
-	background-image: url('../assets/blurry-gradient-haikei.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-	padding: 1rem;
-	border-radius: 10px;
-	margin-top: 20px;
+  background-image: url('../assets/blurry-gradient-haikei.svg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 .recipe-instructions h3 {
@@ -201,13 +196,13 @@ export default {
 
 .section-recipe,
 .section-recipe-rating-container {
-	background-image: url('../assets/blurry-gradient-haikei.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-	padding: 1rem;
-	border-radius: 10px;
-	margin-bottom: 20px;
-	max-width: 300px;
+  background-image: url('../assets/blurry-gradient-haikei.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-width: 300px;
 }
 
 .recipe-description.section-recipe {

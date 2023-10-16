@@ -13,4 +13,8 @@ export default {
 body {
   background-color: #FFFFFF;
 }
+
+body > * {
+  font-family: Cambria, Georgia, serif;
+}
 </style>
