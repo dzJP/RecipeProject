@@ -4,14 +4,15 @@
 		<form v-if="!commentSent" @submit.prevent="submitComment">
 			<!-- Input for Comment -->
 			<div>
-				<label for="comment">Kommentar:</label>
-				<textarea v-model="comment" id="comment"></textarea>
-	
+				<!-- <label for="comment">Comment:</label> -->
+				<textarea v-model="comment" id="comment" placeholder="Fyll i kommentar..."></textarea>
+				<!-- <span v-if="!comment">Leave a comment</span> -->
 			</div>
 			<!-- Input for Name -->
 			<div>
-				<label for="name">Namn:</label>
-				<input v-model="name" type="text" id="name">
+				<!-- <label for="name">Namn:</label> -->
+				<input v-model="name" type="text" id="name" placeholder="Skriv namn...">
+				<!-- <span v-if="!name">Enter</span> -->
 
 			</div>
 			<!-- Submit Button -->
@@ -112,5 +113,16 @@ export default {
 };
 </script>
   
-<style scoped></style>
+<style scoped>
+
+textarea {
+    width: 300px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+}
+
+button {
+	margin-top: 10px;
+}
+
+</style>
   

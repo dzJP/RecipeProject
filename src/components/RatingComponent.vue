@@ -58,12 +58,13 @@ export default {
 <style scoped>
 .star-rating {
 	font-size: 0;
+	margin-bottom: 30px;
 }
 
 .star {
 	display: inline-block;
 	cursor: pointer;
-	font-size: 24px;
+	font-size: 36px;
 	color: #ccc;
 }
 

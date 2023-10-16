@@ -1,7 +1,9 @@
 <template>
 	<header class="header">
 		<div class="h1-box">
-			<h1>Worldwide Pancakes</h1>
+			<router-link :to="'/'" class="header-router">
+				<h1>Worldwide Pancakes</h1>
+			</router-link>
 		</div>
 		<div class="text-box">
 			<p>
@@ -56,7 +58,13 @@ export default {
 .header h1 {
 	font-size: 50px;
 	margin: 0;
+}
 
-
+.header-router {
+	text-decoration: none;
+	/* Remove underline on the link */
+	color: #F3FAFF;
+	/* Set the default color for the link */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 </style>
