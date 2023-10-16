@@ -20,10 +20,10 @@
                 </div>
                 <div class="recipe-info">
                     <div class="recipe-info-item">
-                        Ingredients: {{ recipe.ingredients.length }}
+                        Ingredienser: {{ recipe.ingredients.length }}
                     </div>
                     <div class="recipe-info-item">
-                        Time: {{ recipe.timeInMins }} mins
+                        Tid: {{ recipe.timeInMins }} mins
                     </div>
                 </div>
                 <div class="button-container">
