@@ -11,7 +11,7 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Svenska Pannkakor",
+    "title": "Svenska pannkakor",
     "description": "Ett enkelt grundrecept på tunna pannkakor. Stek och servera med sylt, grädde, glass eller kvarg.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://cdn-rdb.arla.com/Files/arla-se/3249856695/3a50bf71-8585-4719-93bb-014eaea05a6b.jpeg?w=1269&h=715&mode=crop&ak=f525e733&hm=b762ca1a",
@@ -953,7 +953,7 @@ GET {{baseUrl}}/recipes/63309a293120fd5bba986857 HTTP/1.1
 ###
 
 # Tar bort ett recept
-DELETE {{baseUrl}}/recipes/652daf4599612c970cb866e8 HTTP/1.1
+DELETE {{baseUrl}}/recipes/652dbd3599612c970cb86a69 HTTP/1.1
 
 ###
 
