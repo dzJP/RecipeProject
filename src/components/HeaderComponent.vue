@@ -10,9 +10,6 @@
 				Don't panicake! Välkomna till våran värld av pannkakor.
 				Sugen på söta eller saltiga pannkakor? Oroa dig inte, vi har alla recept samlade på en och samma hemsida för
 				att göra det enkelt för just dig.
-				Don't panicake! Välkomna till våran värld av pannkakor.
-				Sugen på söta eller saltiga pannkakor? Oroa dig inte, vi har alla recept samlade på en och samma hemsida för
-				att göra det enkelt för just dig.
 			</p>
 		</div>
 	</header>
@@ -61,8 +58,6 @@ export default {
 .header h1 {
 	font-size: 50px;
 	margin: 0;
-
-
 }
 
 .header-router {

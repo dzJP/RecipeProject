@@ -13,6 +13,7 @@
 				<!-- <label for="name">Namn:</label> -->
 				<input v-model="name" type="text" id="name" placeholder="Skriv namn...">
 				<!-- <span v-if="!name">Enter</span> -->
+
 			</div>
 			<!-- Submit Button -->
 			<button :disabled="formDisabled" type="submit" :title="formDisabled ? 'Please fill in all fields' : ''">
