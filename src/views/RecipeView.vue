@@ -175,10 +175,9 @@ export default {
 	margin-right: 20px;
 }
 
-.recipe-description .recipe-image {
-	width: 800px;
-	height: auto;
-
+.recipe-image {
+  width: 500px; /* Adjust the width to your desired size */
+  height: auto; 
 }
 
 .recipe-instructions {
