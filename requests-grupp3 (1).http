@@ -59,7 +59,7 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2019/02/japanese-fluffy-pancakes-recipe-7087-2.jpg",
     "timeInMins": 45,
-    "categories": [ "Asia"],
+    "categories": [ "Asien"],
     "instructions": [ "Mixa äggulor, arlas mellanmjölk och olja luftigt i en bunke med en stavmixer.", "Sikta ner mjöl och vaniljsocker och mixa i ytterligare i 1–2 minuter.",
     "Vispa i en annan bunke, av glas eller metall, äggvitorna till ett fast skum med elvisp. Tillsätt sockret, lite i taget, under fortsatt vispning tills du får en fast och blank marängsmet.",
     "Vänd ner marängen i ägguleblandningen i fyra omgångar med en slickepott – arbeta försiktigt och försök att behålla så mycket luft i smeten som möjligt.",
@@ -953,7 +953,7 @@ GET {{baseUrl}}/recipes/63309a293120fd5bba986857 HTTP/1.1
 ###
 
 # Tar bort ett recept
-DELETE {{baseUrl}}/recipes/652a8eba99612c970cb8249f HTTP/1.1
+DELETE {{baseUrl}}/recipes/652daf4599612c970cb866e8 HTTP/1.1
 
 ###
 
