@@ -1,12 +1,15 @@
 <template>
 	<header class="header">
 		<div class="h1-box">
-			<h1>Worldwide Pancakes</h1>
+			<router-link :to="'/'" class="header-router">
+				<h1>Worldwide Pancakes</h1>
+			</router-link>
 		</div>
 		<div class="text-box">
 			<p>
-			Don't panicake! Välkomna till våran värld av pannkakor. 
-			Sugen på söta eller saltiga pannkakor? Oroa dig inte, vi har alla recept samlade på en och samma hemsida för att göra det enkelt för just dig.
+				Don't panicake! Välkomna till våran värld av pannkakor.
+				Sugen på söta eller saltiga pannkakor? Oroa dig inte, vi har alla recept samlade på en och samma hemsida för
+				att göra det enkelt för just dig.
 			</p>
 		</div>
 	</header>
@@ -40,7 +43,7 @@ export default {
 	padding: 30px;
 }
 
-.header > * {
+.header>* {
 	display: flex;
 	justify-content: left;
 	flex-basis: 100%;
@@ -50,4 +53,11 @@ export default {
 	margin-left: 30px;
 }
 
+.header-router {
+	text-decoration: none;
+	/* Remove underline on the link */
+	color: #F3FAFF;
+	/* Set the default color for the link */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 </style>

@@ -1,4 +1,5 @@
 <template>
+	<HeaderComponent />
 	<div class="container">
 		<main class="content">
 			<section class="recipe section-recipe">
@@ -19,7 +20,7 @@
 				</div>
 			</section>
 
-			<section class="recipe-description section-recipe">
+			<section class="recipe-description">
 				<div class="description-content">
 					<p>{{ recipe.description }}</p>
 				</div>
@@ -41,19 +42,24 @@
 			<h3>Vad tyckte du om receptet?</h3>
 			<p>Klicka på en stjärna för att ge ditt betyg!</p>
 			<div>
-				<div v-if="!hasVoted">
-					<RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="true" :enable-hover="true" @star-input="handleUserRating" />
+				<div v-if="!hasVoted" class="center-content">
+					<RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="true" :enable-hover="true"
+						@star-input="handleUserRating" />
 				</div>
 				<div v-else>
 					<p>Thank you for your vote</p>
 				</div>
-				<CommentSectionComponent />
+				<div>
+					<CommentSectionComponent />
+				</div>
+
 			</div>
 		</section>
 	</div>
 </template>
 
 <script>
+import HeaderComponent from '../components/HeaderComponent.vue';
 import CommentSectionComponent from '@/components/CommentSectionComponent.vue';
 import RatingComponent from '@/components/RatingComponent.vue'
 
@@ -61,6 +67,7 @@ export default {
 	components: {
 		CommentSectionComponent,
 		RatingComponent,
+		HeaderComponent,
 	},
 	data() {
 		return {
@@ -176,18 +183,19 @@ export default {
 }
 
 .recipe-description .recipe-image {
-	width: 800px;
-	height: auto;
+	width: 70dvw;
+	height: 40dvw;
 
 }
 
 .recipe-instructions {
-  background-image: url('../assets/blurry-gradient-haikei.svg'); 
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 1rem;
-  border-radius: 10px;
-  margin-top: 20px;
+	background-image: url('../assets/blurry-gradient-haikei.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 1rem;
+	border-radius: 10px;
+	margin-top: 20px;
+	text-align: start;
 }
 
 .recipe-instructions h3 {
@@ -196,17 +204,35 @@ export default {
 
 .section-recipe,
 .section-recipe-rating-container {
-  background-image: url('../assets/blurry-gradient-haikei.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 1rem;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  max-width: 300px;
+	background-image: url('../assets/blurry-gradient-haikei.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 1rem;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	max-width: 300px;
+	text-align: center;
 }
 
 .recipe-description.section-recipe {
 	background-image: none;
 
 }
-</style>
+
+.center-content {
+	display: flex;
+	justify-content: center;
+	/* Horizontal centering */
+	align-items: center;
+	/* Vertical centering */
+	height: 50px;
+	/* You can adjust the height as needed */
+}
+
+.description-content {
+	width: 100%;
+	background-image: url('../assets/blurry-gradient-haikei.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+}</style>
