@@ -4,15 +4,16 @@
 		<form v-if="!commentSent" @submit.prevent="submitComment">
 			<!-- Input for Comment -->
 			<div>
-				<label for="comment">Comment:</label>
-				<textarea v-model="comment" id="comment"></textarea>
-				<span v-if="!comment">Leave a comment</span>
+				<!-- <label for="comment">Comment:</label> -->
+				<textarea v-model="comment" id="comment" placeholder="Fyll i kommentar..."></textarea>
+				<!-- <span v-if="!comment">Leave a comment</span> -->
 			</div>
 			<!-- Input for Name -->
 			<div>
-				<label for="name">Namn:</label>
-				<input v-model="name" type="text" id="name">
-				<span v-if="!name">Enter</span>
+				<!-- <label for="name">Namn:</label> -->
+				<input v-model="name" type="text" id="name" placeholder="Skriv namn...">
+				<!-- <span v-if="!name">Enter</span> -->
+
 			</div>
 			<!-- Submit Button -->
 			<button :disabled="formDisabled" type="submit" :title="formDisabled ? 'Please fill in all fields' : ''">
@@ -112,5 +113,16 @@ export default {
 };
 </script>
   
-<style scoped></style>
+<style scoped>
+
+textarea {
+    width: 300px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+}
+
+button {
+	margin-top: 10px;
+}
+
+</style>
   

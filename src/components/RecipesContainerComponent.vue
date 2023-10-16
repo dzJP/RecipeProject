@@ -20,10 +20,10 @@
                 </div>
                 <div class="recipe-info">
                     <div class="recipe-info-item">
-                        Ingredients: {{ recipe.ingredients.length }}
+                        Ingredienser: {{ recipe.ingredients.length }}
                     </div>
                     <div class="recipe-info-item">
-                        Time: {{ recipe.timeInMins }} mins
+                        Tid: {{ recipe.timeInMins }} mins
                     </div>
                 </div>
                 <div class="button-container">
@@ -67,6 +67,7 @@ export default {
     justify-content: space-between;
 }
 
+
 .recipe-container {
     flex: 0 1 calc(33.33% - 20px);
     border: 1px solid #ccc;
@@ -81,6 +82,7 @@ export default {
     flex-direction: column;
     justify-content: space-between;
 }
+
 
 .recipe-image img {
     width: 100%;
@@ -98,7 +100,7 @@ export default {
 .recipe-description {
     font-size: 1rem;
     margin: 10px 0;
-    font-family: Cambria, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     max-height: 3.6em;
     line-height: 1.2em;

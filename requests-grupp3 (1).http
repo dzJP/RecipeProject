@@ -11,12 +11,12 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Svenska Pannkakor",
+    "title": "Svenska pannkakor",
     "description": "Ett enkelt grundrecept på tunna pannkakor. Stek och servera med sylt, grädde, glass eller kvarg.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://cdn-rdb.arla.com/Files/arla-se/3249856695/3a50bf71-8585-4719-93bb-014eaea05a6b.jpeg?w=1269&h=715&mode=crop&ak=f525e733&hm=b762ca1a",
     "timeInMins": 30,
-    "categories": [ "Europe"],
+    "categories": [ "Europa"],
     "instructions": [ "Blanda ingredienserna", "Häll ner smeten", "Stek", "Njut"],
     "ingredients": [
         {
@@ -40,7 +40,7 @@ Content-Type: application/json
             "unit": "deciliter"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 6,
             "unit": "deciliter"
         }
@@ -59,8 +59,8 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2019/02/japanese-fluffy-pancakes-recipe-7087-2.jpg",
     "timeInMins": 45,
-    "categories": [ "Asia"],
-    "instructions": [ "Mixa äggulor, mjölk och olja luftigt i en bunke med en stavmixer.", "Sikta ner mjöl och vaniljsocker och mixa i ytterligare i 1–2 minuter.",
+    "categories": [ "Asien"],
+    "instructions": [ "Mixa äggulor, arlas mellanmjölk och olja luftigt i en bunke med en stavmixer.", "Sikta ner mjöl och vaniljsocker och mixa i ytterligare i 1–2 minuter.",
     "Vispa i en annan bunke, av glas eller metall, äggvitorna till ett fast skum med elvisp. Tillsätt sockret, lite i taget, under fortsatt vispning tills du får en fast och blank marängsmet.",
     "Vänd ner marängen i ägguleblandningen i fyra omgångar med en slickepott – arbeta försiktigt och försök att behålla så mycket luft i smeten som möjligt.",
     "Smält lite smör på låg värme i en non stick-panna. Spritsa eller klicka ut små höga pannkakor i stekpannan (cirka ½ deciliter per pannkaka) och stek i cirka 4 minuter per sida. Vänd försiktigt, de är väldigt ömtåliga. När du steker andra sidan kan du lägga på ett lock så att även sidorna av pannkakorna tillagas.",
@@ -72,7 +72,7 @@ Content-Type: application/json
             "unit": "stycken"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 1,
             "unit": "deciliter"
         },
@@ -121,7 +121,7 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://silkroadrecipes.com/wp-content/uploads/2021/04/Baghrir-Moroccan-Pancakes16-768x1075.jpg",
     "timeInMins": 35,
-    "categories": [ "Africa"],
+    "categories": [ "Afrika"],
     "instructions": [ "Blanda alla torra ingredienser i en bunke.", "Tillsätt 5–6 dl vatten, lite i taget och under omrörning – spara cirka 1 dl till senare.",
     "Mixa smeten slät direkt i bunken med stavmixer. Täck bunken med en kökshandduk och låt smeten jäsa i 45 minuter till 1 timme.",
     "När den är färdigjäst ska den vara alldeles bubblig på ytan och ganska tjock. Tillsätt det sparade vattnet och rör till en tunn jämn smet.",
@@ -184,7 +184,7 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-mega/etiopiska-pannkakor.png.jpg",
     "timeInMins": 35,
-    "categories": [ "Africa"],
+    "categories": [ "Afrika"],
     "instructions": [ "Blanda de torra ingredienserna.", "Vispa därefter ner ägg och vatten.", "Låt svälla i 20 minuter.",
      "Stek tunna pannkakor av smeten i lite olja. Stek bara på ena sidan tills ovansidan bubblar och torkat.",
      "Håll pannkakorna varma under en handduk i ugnen på 70 grader medan du steker klart resten." ],
@@ -234,8 +234,8 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/d2c49563-6f20-42a2-87bd-10342890c77f?fit=crop&h=750&w=1000&s=8a09086ea35b9359085ab1ca9e846d17373d6386",
     "timeInMins": 15,
-    "categories": [ "Africa"],
-    "instructions": [ "Blanda mjöl, socker, kardemumma och salt i en bunke.", "Vispa ägg i en annan bunke och tillsätt mjölk, olja och häll över till mjölblandningen lite i taget.", 
+    "categories": [ "Afrika"],
+    "instructions": [ "Blanda mjöl, socker, kardemumma och salt i en bunke.", "Vispa ägg i en annan bunke och tillsätt Arlas mellanmjölk, olja och häll över till mjölblandningen lite i taget.", 
     "Rör till smeten är klumpfri. Hetta upp olja eller smör i en stekpanna och stek pannkakorna tills de fått fin färg. Pensla med smör innan du vänder. Upprepa tills du har använt all smet.",
      "Servera med valfritt tillbehör. I Somalia äts de med smör och socker med det går lika bra med sylt och grädde." ],
     "ingredients": [
@@ -245,7 +245,7 @@ Content-Type: application/json
             "unit": "dl"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 6,
             "unit": "dl"
         },
@@ -284,7 +284,7 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-mega/majspannkaka-fran-sudan.jpg.webp",
     "timeInMins": 15,
-    "categories": [ "Africa"],
+    "categories": [ "Afrika"],
     "instructions": [ "Vispa ihop mjöl och salt och hälften av vattnet till en slät smet. Vispa ner resten av vattnet och låt sedan smeten stå svalt tills nästa dag.",
     "Hetta upp en stekpanna och smält lite smör i den. Häll i smet och grädda pannkakan tills smeten stelnat. Vänd och stek färdig på andra sidan. Lägg upp pannkakorna på varmt fat och servera dem nystekta." ],
     "ingredients": [
@@ -324,8 +324,8 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://ilovebake.pl/wp-content/uploads/2015/01/nalesniki-z-jablkami-i-cynamonem-9.jpg",
     "timeInMins": 30,
-    "categories": [ "Europe"],
-    "instructions": [ "Blanda mjöl, torrjäst, vaniljsocker, socker och salt i en bunke. Eller lös upp färsk jäst i lite mjölk först. Tillsätt ljummen mjölk och vispa smeten slät med en handvisp. Tillsätt äggen och vispa lite till. Täck sedan bunken och låt smeten jäsa i rumstemperatur 1 timme.",
+    "categories": [ "Europa"],
+    "instructions": [ "Blanda mjöl, torrjäst, vaniljsocker, socker och salt i en bunke. Eller lös upp färsk jäst i lite Arlas mellanmjölk först. Tillsätt ljummen Arlas mellanmjölk och vispa smeten slät med en handvisp. Tillsätt äggen och vispa lite till. Täck sedan bunken och låt smeten jäsa i rumstemperatur 1 timme.",
     "Skala och finhacka äpplena, hacka dem i små fina tärningar. Vänd försiktigt i smeten, blanda inte mer än nödvändigt, försök att behålla smeten fluffig.",
     "Hetta upp olja i en stekpanna och klicka i smeten. Stek pannkakorna tills de blir gyllene ca 3 min på varje sida. Tänk på att inte ha för hög värme på oljan, för då kan pannkakan stekas utanpå men fortfarande vara rå i mitten. Låt pannkakorna rinna av på papper. Pudra med florsocker och servera med sylt." ],
     "ingredients": [
@@ -345,7 +345,7 @@ Content-Type: application/json
             "unit": "dl"
         },
         {
-            "name": "Arlas mjölk(ljummen)",
+            "name": "Arlas mellanmjölk(ljummen)",
             "amount": 1.25,
             "unit": "dl"
         },
@@ -394,10 +394,10 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/5b1505f1-f486-421f-ae33-ecb14f80a93c?fit=crop&h=664&w=1000&s=5d0312d7af80917bf2a6e6cf18d11352eaa9b294",
     "timeInMins": 25,
-    "categories": [ "Europe"],
-    "instructions": [ "Värm ugnen till 220 grader.", "Värm mjölken i en kastrull.",
+    "categories": [ "Europa"],
+    "instructions": [ "Värm ugnen till 220 grader.", "Värm Arlas mellanmjölk i en kastrull.",
     "Lägg en klick smör i en form som tål att stå i ugnen. Ställ in den i ugnen och låt smöret smälta.",
-    "Rör ihop ägg, mjöl, socker och salt. Rör i den varma mjölken.", "Ta ut ugnsformen och häll i smeten. Ställ in i mitten av ugnen och låt svälla i cirka 15 minuter. När den är fluffig och fått fin färg är den färdig. Om du vill kan du använda flera mindre portionsformar.",
+    "Rör ihop ägg, mjöl, socker och salt. Rör i den varma mellanmjölken från Arla.", "Ta ut ugnsformen och häll i smeten. Ställ in i mitten av ugnen och låt svälla i cirka 15 minuter. När den är fluffig och fått fin färg är den färdig. Om du vill kan du använda flera mindre portionsformar.",
     "Låt den sjunka ihop i mitten och bred på lemon curd, häll över blåbär och pudra med florsocker. Servera direkt." ],
     "ingredients": [
         {
@@ -416,7 +416,7 @@ Content-Type: application/json
             "unit": "dl"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 1,
             "unit": "dl"
         },
@@ -566,7 +566,7 @@ Content-Type: application/json
     "timeInMins": 45,
     "categories": [ "Sydamerika"],
     "instructions": [ "I en stor blandningsskål, tillsätt de torra ingredienserna inklusive allmjöl, socker och salt.",
-    "Vispa de torra ingredienserna för att fördela sockret och saltet jämnt.", "Tillsätt de våta ingredienserna inklusive mjölk och ägg.",
+    "Vispa de torra ingredienserna för att fördela sockret och saltet jämnt.", "Tillsätt de våta ingredienserna inklusive Arlas mellanmjölk och ägg.",
     "Blanda ingredienserna, vispa tills smeten är jämn. * Smeten ska hällas ut från din slev som tung grädde, varken för vattnig eller för tjock som pannkaka smet.",
     "Täck skålen med plastfolie, kyl och lägg smeten åt sidan för att vila i 30 minuter, upp till en timme och till och med över natten.",
     "---> Koka Panqueques (Crepes) <----", "Värm din stekpanna eller stekpannan till medelvärme. När du är uppvärmd, borsta lätt med smör eller olja. * Applicera smöret eller oljan igen efter behov mellan tillagningen av crepesna.",
@@ -595,7 +595,7 @@ Content-Type: application/json
             "unit": "stycken"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 6,
             "unit": "koppar"
         },
@@ -619,7 +619,7 @@ Content-Type: application/json
     "imageUrl": "https://img.koket.se/standard-mega/bob-klassiska-amerikanska-pannkakor.jpg.webp",
     "timeInMins": 30,
     "categories": [ "Nordamerika"],
-    "instructions": [ "Smält smöret. Blanda alla torra ingredienser i en bunke. Vispa sedan ner det smälta smöret, mjölk och ägg. Vispa tills smeten är helt slät utan klumpar.",
+    "instructions": [ "Smält smöret. Blanda alla torra ingredienser i en bunke. Vispa sedan ner det smälta smöret, Arlas mellanmjölk och ägg. Vispa tills smeten är helt slät utan klumpar.",
     "Hetta upp en stekpanna med lite smör och grädda små fina pannkakor. Du kan behöva smöra pannan mellan pannkakorna.", "Servera med lönnsirap, BOB BARA BÄR & Frukt och eventuellt lite färska blåbär." ],
     "ingredients": [
         {
@@ -643,7 +643,7 @@ Content-Type: application/json
             "unit": "msk"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 2.5,
             "unit": "dl"
         },
@@ -675,7 +675,7 @@ Content-Type: application/json
     "categories": [ "Nordamerika"],
     "instructions": [ "Skala och skär morötterna i korta stavar.", "Skölj, ansa och skär blomkålshuvudet i buketter.", "Skala och strimla purjolöken och palsternackan.",
     "Strimla ner bacon och fräs det knaprigt i sitt eget fett.", "Lägg ner det gröna och låt fräsa med några minuter.", "Fördela baconfräset i en stor ugnssäker form eller långpanna.",
-    "Vispa samman ägg, mjölk, vetemjöl, texmexkrydda och salt. Häll smeten över grönsaker och bacon.", "Grädda i cirka 30 minuter på 225 grader. Låt stå i några minuter och servera sedan med tomat- och löksallad samt bröd." ],
+    "Vispa samman ägg, Arlas mellanmjölk, vetemjöl, texmexkrydda och salt. Häll smeten över grönsaker och bacon.", "Grädda i cirka 30 minuter på 225 grader. Låt stå i några minuter och servera sedan med tomat- och löksallad samt bröd." ],
     "ingredients": [
         {
             "name": "Morötter",
@@ -703,7 +703,7 @@ Content-Type: application/json
             "unit": "stycken"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 8,
             "unit": "dl"
         },
@@ -738,7 +738,7 @@ Content-Type: application/json
     "imageUrl": "https://static.mathem.se/shared/images/recipes/doublelarge/matispankis.jpeg",
     "timeInMins": 35,
     "categories": [ "Nordamerika"],
-    "instructions": [ "Smält smöret och tillsätt sedan mjölken. Vispa ner äggen. Blanda mjöl, bakpulver, salt, socker och kardemumma i en skål.", 
+    "instructions": [ "Smält smöret och tillsätt sedan Arlas mellanmjölk. Vispa ner äggen. Blanda mjöl, bakpulver, salt, socker och kardemumma i en skål.", 
     "Häll ner vätskan samtidigt som du vispar konstant. Låt pannkakssmeten stå och tjockna i runt 15 minuter. Detta är viktigt för att den ska få rätt konsistens.", 
     "För att grädda pannkakor med en diameter på ca 15 cm, häller du 1,5–2 msk smet i en lätt smörad stekpanna. När smeten pöser upp och får bubblor på ytan vänder du pannkakan med stekspaden och gräddar den på andra sidan.", 
     "Stapla de gräddade pannkakorna med tjocka skivor Jarlsberg® mellan på ett serveringsfat eller en tallrik. Ringla över lönnsirap och servera." ],
@@ -749,7 +749,7 @@ Content-Type: application/json
             "unit": "gram"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 2.25,
             "unit": "dl"
         },
@@ -798,7 +798,7 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-mega/vietnamesiska-pannkakor.png.jpg",
     "timeInMins": 30,
-    "categories": [ "Asia"],
+    "categories": [ "Asien"],
     "instructions": [ "Blanda rismjöl, socker, salt och gurkmeja i en stor skål med kokosgrädden. Vispa ner vattnet lite i taget. Låt smeten vila i 10 minuter.", "Innan du steker pannkakorna gör du klart fyllningen.",
     "Hetta upp en matsked olja i en wok, fräs löksorterna på låg värme tills de blivit genomskinliga men utan att de tar färg.", "Lägg över lökmixen i en bunke och tillsätt fisksås, sesamolja, böngroddar och krabbkött. Blanda och smaksätt med salt och malen vitpeppar.",
     "Hetta upp woken igen och tillsätt 2 msk olja, när oljan börjar ryka så ta bort den från värmen och täck ytan med olja genom att luta woken från sida till sida.", "Häll ur överflödig olja och torka ur woken med hushållspapper. Tricket är att få en tunn film olja som gör att pannkakssmeten kan täcka woken utan att lossna medan pannkakan steks.",
@@ -884,7 +884,7 @@ Content-Type: application/json
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-giant/kinesiska-pannkakor-3.jpg.webp",
     "timeInMins": 30,
-    "categories": [ "Asia"],
+    "categories": [ "Asien"],
     "instructions": [ "Vispa ihop pannkakssmeten. Låt den svälla en stund.", "Hacka lök och vitlök och fräs den i olja. Fräs hastigt med lite matfett. Lägg i färsen och smula den med en gaffel. Krydda med salt och peppar. Småkoka 20 minuter. Finstrimla purjolök och salladskål. Vänd ner dem tillsammans med avrunna böngroddar. Smaka av med soja och låt allt puttra sakta ca 20 minuter.", 
     "Grädda små tunna pannkakor. Klicka lite fyllning på varje pannkaka, rulla ihop och servera dem varma."],
     "ingredients": [
@@ -899,7 +899,7 @@ Content-Type: application/json
             "unit": "dl"
         },
         {
-            "name": "Arlas mjölk",
+            "name": "Arlas mellanmjölk",
             "amount": 5,
             "unit": "dl"
         },
@@ -953,7 +953,7 @@ GET {{baseUrl}}/recipes/63309a293120fd5bba986857 HTTP/1.1
 ###
 
 # Tar bort ett recept
-DELETE {{baseUrl}}/recipes/652a8eba99612c970cb8249f HTTP/1.1
+DELETE {{baseUrl}}/recipes/652dbd3599612c970cb86a69 HTTP/1.1
 
 ###
 
