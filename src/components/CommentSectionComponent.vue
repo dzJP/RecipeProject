@@ -4,15 +4,15 @@
 		<form v-if="!commentSent" @submit.prevent="submitComment">
 			<!-- Input for Comment -->
 			<div>
-				<label for="comment">Comment:</label>
+				<label for="comment">Kommentar:</label>
 				<textarea v-model="comment" id="comment"></textarea>
-				<span v-if="!comment">Leave a comment</span>
+	
 			</div>
 			<!-- Input for Name -->
 			<div>
 				<label for="name">Namn:</label>
 				<input v-model="name" type="text" id="name">
-				<span v-if="!name">Enter</span>
+
 			</div>
 			<!-- Submit Button -->
 			<button :disabled="formDisabled" type="submit" :title="formDisabled ? 'Please fill in all fields' : ''">

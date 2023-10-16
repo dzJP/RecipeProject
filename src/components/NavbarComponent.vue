@@ -2,7 +2,7 @@
 	<aside class="navbar">
 		<router-link :to="'/'">
 			<div :class="{ 'bold-text': isAllRecipesActive() }">
-				All recipes ({{ calculateTotalRecipes() }})
+				Alla recept ({{ calculateTotalRecipes() }})
 			</div>
 		</router-link>
 		<!-- If categories are available, display them as links -->
