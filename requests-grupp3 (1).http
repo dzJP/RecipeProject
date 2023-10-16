@@ -455,7 +455,7 @@ POST {{baseUrl}}/recipes HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Brasilianska Tapioka pannkakor",
+    "title": "Brasilianska pannkakor",
     "description": "Veganska och vegetariska utan ägg.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://receptfavoriter.se/sites/default/files/tapioca_65_980_4.jpg",
@@ -953,7 +953,7 @@ GET {{baseUrl}}/recipes/63309a293120fd5bba986857 HTTP/1.1
 ###
 
 # Tar bort ett recept
-DELETE {{baseUrl}}/recipes/6529b2f699612c970cb7fe69 HTTP/1.1
+DELETE {{baseUrl}}/recipes/652a8eba99612c970cb8249f HTTP/1.1
 
 ###
 
