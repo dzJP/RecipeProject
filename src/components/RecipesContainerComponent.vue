@@ -1,32 +1,41 @@
 <template>
     <div class="big-recipes-container">
-        <section v-for="recipe in filteredRecipes" :key="recipe._id" class="recipe-container">
+        <div v-for="recipe in filteredRecipes" :key="recipe._id" class="recipe-container">
             <router-link :to="'/recipe/' + recipe._id">
-            <div class="img-container">
-                <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image"  />
-            </div>
+                <div class="img-container">
+                    <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
+                </div>
             </router-link>
-            <div class="recipe-heading">
-                <div>
-                    <h2>{{ recipe.title }}</h2>
+            <div class="recipe-details">
+                <div class="recipe-heading">
+                    <div>
+                        <h3 class="recipe-title">{{ recipe.title }}</h3>
+                    </div>
+                    <div>
+                        <p class="recipe-description">{{ recipe.description }}</p>
+                    </div>
+                    <div class="rating-wrapper">
+                        <RatingComponent :value="recipe.avgRating" :max-stars="5" :is-interactive="false" />
+                    </div>
                 </div>
-                <div>
-                    <p class="text">{{ recipe.description }}</p>
+                <div class="recipe-info">
+                    <div class="recipe-info-item">
+                        Ingredients: {{ recipe.ingredients.length }}
+                    </div>
+                    <div class="recipe-info-item">
+                        Time: {{ recipe.timeInMins }} mins
+                    </div>
+                </div>
+                <div class="button-container">
+                    <div class="button-wrapper">
+                        <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
+                    </div>
                 </div>
             </div>
-            <div class="rating-container">
-                <p>Rating: {{ recipe.avgRating || 'N/A' }}</p>
-            </div>
-            <div class="button-container">
-                <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
-            </div>
-                <div>
-                    <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
-                </div>
-        </section>
+        </div>
     </div>
 </template>
-  
+
 <script>
 import RatingComponent from '../components/RatingComponent.vue';
 import CustomButton from '../components/CustomButton.vue';
@@ -49,16 +58,16 @@ export default {
     },
 };
 </script>
-
+  
 <style scoped>
-.recipes-container {
+.big-recipes-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
 }
 
-.recipe-card {
+.recipe-container {
     flex: 0 1 calc(33.33% - 20px);
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -69,46 +78,70 @@ export default {
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.recipe-content {
+.recipe-image img {
+    width: 100%;
+    max-height: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.recipe-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-family: Cambria, sans-serif;
+}
+
+.recipe-description {
+    font-size: 1rem;
+    margin: 10px 0;
+    font-family: Cambria, sans-serif;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.2em;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.recipe-info {
     display: flex;
-}
-
-.recipe-heading {
+    justify-content: space-between;
+    margin-bottom: 5px;
     flex-direction: column;
-    max-width: 20%;
+    align-items: flex-start;
 }
 
-.button {
-    display: block;
+.recipe-info-item {
+    font-size: 0.9rem;
+    color: #555;
 }
 
-.recipe-heading p {
-    margin-bottom: 20px;
+.rating-wrapper {
+    margin-top: 10px;
 }
 
-.rating-container {
-    text-align: center;
-    flex-grow: 1;
+.button-container {
+    align-self: flex-start;
+    margin-top: auto;
+    position: relative;
 }
 
-.information-container {
-    flex-direction: column;
-    flex-grow: 1;
+.button-wrapper {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
-
 
 .recipe-image {
     border: 1px solid #FFD786;
     box-shadow: 5px 5px 5px black;
     width: 200px;
     height: 200px;
-}
-
-.recipe-image {
     transition: transform 0.3s ease-in-out;
     border-radius: 9999px;
 }
@@ -125,33 +158,18 @@ export default {
 
 .recipe-image {
     max-width: 100%;
-    transition: transform 0.3s ease-in-out;
 }
 
 .recipe-image:hover {
     transform: scale(1.1);
 }
 
+@media (max-width: 1000px) {
 
-@media (max-width : 1000px) {
-    .text {
+    .recipe-description,
+    .rating-wrapper,
+    .recipe-info {
         display: none;
-    }
-    
-    .rating-container {
-        display: none;
-    }
-
-    .information-container {
-        display: none;
-        flex-direction: row;
-        flex-grow: 0;
-        flex-wrap: wrap;
-    }
-
-    .recipe-container {
-        
     }
 }
-
 </style>

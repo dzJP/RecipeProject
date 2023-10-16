@@ -19,8 +19,7 @@ export default {
     border-radius: 10px;
     text-align: center;
     border: none;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 10px;
     transition: background-color 0.3s ease;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;   
     text-decoration: none;

@@ -5,12 +5,8 @@
 
             <div class="content">
                 <SearchComponent v-model="searchQuery" @search="handleSearch" />
-                <LoadingComponent v-if="loading" />
-
-                <RecipeContainerComponent v-else :recipes="recipes" :searchQuery="searchQuery" />
                 <FetchRecipesComponent @recipes-loaded="handleRecipesLoaded" />
                 <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
-                <SearchComponent v-model="searchQuery" @search="handleSearch" />
                 <LoadingComponent v-if="loading" />
                 <RecipesContainerComponent :recipes="recipes" :searchQuery="searchQuery" />
                 <RatingComponent :value="recipe?.avgRating" :max-stars="5" :is-interactive="false" />
