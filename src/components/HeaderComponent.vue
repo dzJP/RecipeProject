@@ -5,8 +5,9 @@
 		</div>
 		<div class="text-box">
 			<p>
-			Don't panicake! Välkomna till våran värld av pannkakor. 
-			Sugen på söta eller saltiga pannkakor? Oroa dig inte, vi har alla recept samlade på en och samma hemsida för att göra det enkelt för just dig.
+				Don't panicake! Välkomna till våran värld av pannkakor.
+				Sugen på söta eller saltiga pannkakor? Oroa dig inte, vi har alla recept samlade på en och samma hemsida för
+				att göra det enkelt för just dig.
 			</p>
 		</div>
 	</header>
@@ -20,34 +21,42 @@ export default {
 
 <style scoped>
 .header {
-	grid-row: 1 / 2;
-	grid-column: 1 / 3;
-	display: flex;
-	width: 100%;
-	text-align: left;
-	flex-wrap: wrap;
-	height: auto;
-	color: #F3FAFF;
-	/* background-color: #C4E0F3; */
-	background-image: url('../assets/blurry-gradient-haikei3.svg');
-	border-bottom: 2px solid #F3FAFF;
-	border-radius: 10px;
-	background-size: cover;
-	margin-bottom: 5px;
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #F3FAFF;
+  background-image: url('../assets/blurry-gradient-haikei3.svg');
+  border-bottom: 2px solid #F3FAFF;
+  border-radius: 10px;
+  background-size: cover;
+  margin-bottom: 5px;
+  padding: 20px;
+  text-shadow: 2px 2px #000000;
 }
 
 .text-box {
-	padding: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
 }
 
-.header > * {
+.header>* {
 	display: flex;
 	justify-content: left;
 	flex-basis: 100%;
 }
 
 .header h1 {
-	margin-left: 30px;
-}
+	font-size: 50px;
+	margin: 0;
 
+
+}
 </style>
