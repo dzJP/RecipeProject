@@ -62,10 +62,11 @@ export default {
 }
 
 .star {
-	display: inline-block;
-	cursor: pointer;
-	font-size: 36px;
-	color: #ccc;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 36px; /* Adjust this value as needed */
+    color: #ccc;
+	vertical-align: middle; /* Add this line */
 }
 
 .star.filled {

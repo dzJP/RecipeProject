@@ -55,7 +55,7 @@ Content-Type: application/json
 
 {
     "title": "Japanska pannkakor",
-    "description": "Superluftiga pannkakor som är helt oemotståndligt goda.",
+    "description": "Söta små pannkakor som känns som fluffiga moln i munnen. Goda som de är men serveras med fördel med det sötsalta smöret och färska bär. Servera pannkakorna nygräddade.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2019/02/japanese-fluffy-pancakes-recipe-7087-2.jpg",
     "timeInMins": 45,
@@ -180,7 +180,7 @@ Content-Type: application/json
 
 {
     "title": "Etiopiska pannkakor",
-    "description": "De här smarriga pannakorna från Etiopien är glutenfria och perfekta att servera till en mustig gryta.",
+    "description": "Smarriga och glutenfria pannkakor som är ett givet tillbehör till etiopiska kött- och grönsaksgrytor.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-mega/etiopiska-pannkakor.png.jpg",
     "timeInMins": 35,
@@ -230,7 +230,7 @@ Content-Type: application/json
 
 {
     "title": "Somaliska pannkakor",
-    "description": "Malawax är tunna pannkakor med smak av kardemumma.",
+    "description": "Somaliska pannkakor stekta i olja med smak av kardemumma. Ljuvliga att servera nystekta till frukost med honung och en kopp te.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://shared.cdn.smp.schibsted.com/v2/images/d2c49563-6f20-42a2-87bd-10342890c77f?fit=crop&h=750&w=1000&s=8a09086ea35b9359085ab1ca9e846d17373d6386",
     "timeInMins": 15,
@@ -320,7 +320,7 @@ Content-Type: application/json
 
 {
     "title": "Polska pannkakor",
-    "description": "Ditt hus kommer att lukta som äpple och kanel i 2 veckor.",
+    "description": "Ett enkelt recept som ger riktigt goda pannkakor med en perfekt balans av kanel och äpple. En klassisk delikatess att bjuda nära och kära på.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://ilovebake.pl/wp-content/uploads/2015/01/nalesniki-z-jablkami-i-cynamonem-9.jpg",
     "timeInMins": 30,
@@ -456,7 +456,7 @@ Content-Type: application/json
 
 {
     "title": "Brasilianska pannkakor",
-    "description": "Veganska och vegetariska utan ägg.",
+    "description": "Veganska och vegetariska utan ägg. En delikatess! Knaprika och goda med smaksättning och toppings som jordnötssmör, skivad banan och riven choklad.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://receptfavoriter.se/sites/default/files/tapioca_65_980_4.jpg",
     "timeInMins": 25,
@@ -513,7 +513,7 @@ Content-Type: application/json
 
 {
     "title": "Venezuelanska pannkakor",
-    "description": "Dessa söta majspannkakor från Venezuela gör den perfekta frukosten . Cachapas är gjorda med enkla ingredienser - färsk majs, lite smör, grädde och salt - och ett bra alternativ till den genomsnittliga mjölbaserade pannkakan.",
+    "description": "Dessa söta majspannkakor från Venezuela gör den perfekta frukosten. Cachapas är gjorda med enkla ingredienser - färsk majs, lite smör, grädde och salt - och ett bra alternativ till den genomsnittliga mjölbaserade pannkakan.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://idata.hiloved.com/imgs/672a61b433c2343c-1024x681.jpg",
     "timeInMins": 25,
@@ -567,7 +567,7 @@ Content-Type: application/json
     "categories": [ "Sydamerika"],
     "instructions": [ "I en stor blandningsskål, tillsätt de torra ingredienserna inklusive allmjöl, socker och salt.",
     "Vispa de torra ingredienserna för att fördela sockret och saltet jämnt.", "Tillsätt de våta ingredienserna inklusive Arlas mellanmjölk och ägg.",
-    "Blanda ingredienserna, vispa tills smeten är jämn. * Smeten ska hällas ut från din slev som tung grädde, varken för vattnig eller för tjock som pannkaka smet.",
+    "Blanda ingredienserna, vispa tills smeten är jämn. Smeten ska hällas ut från din slev som tung grädde, varken för vattnig eller för tjock som pannkaka smet.",
     "Täck skålen med plastfolie, kyl och lägg smeten åt sidan för att vila i 30 minuter, upp till en timme och till och med över natten.",
     "---> Koka Panqueques (Crepes) <----", "Värm din stekpanna eller stekpannan till medelvärme. När du är uppvärmd, borsta lätt med smör eller olja. * Applicera smöret eller oljan igen efter behov mellan tillagningen av crepesna.",
     "Vispa smeten innan du använder eftersom mjölet sätter sig medan smeten vilar. Använd en ¼ koppmätningskopp eller sleva ut crepe-smeten på din uppvärmda stekpanna eller cirkel och luta sedan pannan för att sprida smeten ut. Koka i ungefär en minut på första sidan tills den är gyllene i färg och en spatel glider under kräppkanterna (utan att klibba).",
@@ -614,7 +614,7 @@ Content-Type: application/json
 
 {
     "title": "Amerikanska pannkakor",
-    "description": "Lyxig helgfrukost, brunch eller lunch.",
+    "description": "Lyxig helgfrukost, brunch eller lunch. Dessa små, tjocka och fluffiga pannkakor är alltid lika uppskattade bland gästerna.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-mega/bob-klassiska-amerikanska-pannkakor.jpg.webp",
     "timeInMins": 30,
@@ -733,7 +733,7 @@ Content-Type: application/json
 
 {
     "title": "Kanadensiska pannkakor",
-    "description": "En blandning mellan tacos och ugnspannkaka blir till det bästa av två världar.",
+    "description": "Rätten kan nog anses som en av landets nationalrätter och kan väl passa bra på Kanadas nationaldag den 1 juli.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://static.mathem.se/shared/images/recipes/doublelarge/matispankis.jpeg",
     "timeInMins": 35,
@@ -794,7 +794,7 @@ Content-Type: application/json
 
 {
     "title": "Vietnamesiska pannkakor",
-    "description": "Banh Xeo kallas de här vietnamesiska pannkakorna som är fyllda med krabba och grönsaker.",
+    "description": "Banh Xeo kallas de här vietnamesiska pannkakorna som är fyllda med krabba och grönsaker. Funkar till frukost, lunch eller middag!",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-mega/vietnamesiska-pannkakor.png.jpg",
     "timeInMins": 30,
@@ -880,7 +880,7 @@ Content-Type: application/json
 
 {
     "title": "Kinesiska pannkakor",
-    "description": "Ett mellanting mellan vårrullar och crèpes. Servera dem gärna med lite soja separat.",
+    "description": "Ett mellanting mellan vårrullar och crèpes som är  Servera dem gärna med lite soja separat.",
     "ratings": [3, 4, 5, 4, 3, 5],
     "imageUrl": "https://img.koket.se/standard-giant/kinesiska-pannkakor-3.jpg.webp",
     "timeInMins": 30,
@@ -953,7 +953,7 @@ GET {{baseUrl}}/recipes/63309a293120fd5bba986857 HTTP/1.1
 ###
 
 # Tar bort ett recept
-DELETE {{baseUrl}}/recipes/652dbd3599612c970cb86a69 HTTP/1.1
+DELETE {{baseUrl}}/recipes/652eb6f899612c970cb89ba6 HTTP/1.1
 
 ###
 

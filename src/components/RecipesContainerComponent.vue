@@ -81,7 +81,12 @@ export default {
     position: relative;
 
 }
-
+.recipe-details {
+  flex-grow: 1; /* Allow recipe details to grow within the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .recipe-image img {
     width: 100%;
     max-height: 200px;
@@ -109,29 +114,28 @@ export default {
 }
 
 .recipe-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    flex-direction: column;
-    align-items: flex-start;
+    margin-top: 10px; 
 }
 
 .recipe-info-item {
     font-size: 0.9rem;
     color: #555;
+    flex: 1; /* Allow items to take up equal space */
+ 
 }
 
 .rating-wrapper {
-    margin-top: 10px;
+    position: relative;
+    top: 30px; /* Adjusted from 10px to 15px */
 }
-
 .button-container {
     position: absolute;
-    bottom: 20px;
+    bottom: 25px;
     right: 10px;
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    margin-top: auto;
 }
 
 .button-wrapper {
