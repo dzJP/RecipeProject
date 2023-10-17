@@ -9,7 +9,7 @@
                 <FetchCategoriesComponent @categories-loaded="handleCategoriesLoaded" />
                 <LoadingComponent v-if="loading" />
                 <RecipesContainerComponent :recipes="recipes" :searchQuery="searchQuery" />
-                <RatingComponent :value="recipe?.avgRating" :max-stars="5" :is-interactive="false" />
+
             </div>
         </main>
 </template>
@@ -22,7 +22,7 @@ import RecipesContainerComponent from '../components/RecipesContainerComponent.v
 import LoadingComponent from '../components/LoadingComponent.vue';
 import FetchRecipesComponent from '../components/FetchRecipesComponent.vue';
 import FetchCategoriesComponent from '../components/FetchCategoriesComponent.vue';
-import RatingComponent from '../components/RatingComponent.vue';
+
 
 export default {
     components: {
@@ -33,7 +33,7 @@ export default {
         LoadingComponent,
         FetchRecipesComponent,
         FetchCategoriesComponent,
-        RatingComponent,
+
     },
     data() {
         return {
