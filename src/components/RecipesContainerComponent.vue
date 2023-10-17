@@ -25,7 +25,7 @@
                 </div>
                 <div class="recipe-info">
                     <div class="recipe-info-item">
-                        Ingredienser: {{ recipe.ingredients.length }}
+                        Antal ingredienser: {{ recipe.ingredients.length }}
                     </div>
                     <div class="recipe-info-item">
                         Tid: {{ recipe.timeInMins }} mins

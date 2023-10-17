@@ -23,30 +23,34 @@ export default {
 
 <style scoped>
 .header {
-  grid-row: 1 / 2;
-  grid-column: 1 / 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #F3FAFF;
-  background-image: url('../assets/blurry-gradient-haikei3.svg');
-  border-bottom: 2px solid #F3FAFF;
-  border-radius: 10px;
-  background-size: cover;
-  margin-bottom: 5px;
-  padding: 20px;
-  text-shadow: 2px 2px #000000;
+	grid-row: 1 / 2;
+	grid-column: 1 / 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #F3FAFF;
+	/* background-image: url('../assets/blurry-gradient-haikei3.svg'); */
+	background-color: #19a413;
+	border-bottom: 2px solid #F3FAFF;
+	border-radius: 10px;
+	background-size: cover;
+	margin-bottom: 10px;
+	padding: 1rem;
+	text-shadow: 2px 2px #000000;
+	border-top: 2px solid #F3FAFF;
+	border-right: 2px solid #F3FAFF;
+	box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .text-box {
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 10px 0;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 10px 0;
 }
 
 .header>* {

@@ -62,7 +62,8 @@ a {
 	flex-wrap: wrap;
 	flex-direction: column;
 	border-radius: 10px;
-	background-image: url('../assets/blurry-gradient-haikei.svg');
+	/* background-image: url('../assets/blurry-gradient-haikei.svg'); */
+	background-color: #19a413;
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 1rem;

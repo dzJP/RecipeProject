@@ -6,11 +6,12 @@
 				<h1>{{ recipe.title }}</h1>
 				<div class="recipe-info">
 					<p>
-						Rating: {{ recipe.avgRating || 'N/A' }} | Ingredienser |
+						Rating: {{ recipe.avgRating || 'N/A' }} |
+						Ingredienser: {{ recipe.ingredients ? recipe.ingredients.length : 'Loading...' }} |
 						{{ recipe.timeInMins }} Minuter
 					</p>
 				</div>
-				<div class="recipe-ingredients">
+				<div class="recipe-ingredients" v-if="recipe.ingredients && recipe.ingredients.length > 0">
 					<h3>Ingredienser</h3>
 					<ul>
 						<li v-for="(ingredient, index) in recipe.ingredients" :key="index">
@@ -52,7 +53,6 @@
 				<div>
 					<CommentSectionComponent />
 				</div>
-
 			</div>
 		</section>
 	</div>
@@ -160,7 +160,11 @@ export default {
 .recipe {
 	flex: 1;
 	margin-right: 20px;
+}
 
+.recipe-rating-container {
+	max-width: 300px;
+	align-self: flex-start;
 }
 
 .recipe-ingredients {
@@ -183,19 +187,28 @@ export default {
 }
 
 .recipe-description .recipe-image {
-	width: 50dvw;
+	width: 100%;
 	height: 30dvw;
-
+	border-radius: 20px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.recipe-instructions {
-	background-image: url('../assets/blurry-gradient-haikei.svg');
+.recipe-instructions, .description-content {
+	max-width: 50dvw;
+	background-color: #19a413;
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 1rem;
 	border-radius: 10px;
 	margin-top: 20px;
 	text-align: start;
+	text-shadow: 1px 1px #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #F3FAFF;
+	border-top: 2px solid #F3FAFF;
+    border-right: 2px solid #F3FAFF;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .recipe-instructions h3 {
@@ -204,35 +217,50 @@ export default {
 
 .section-recipe,
 .section-recipe-rating-container {
-	background-image: url('../assets/blurry-gradient-haikei.svg');
+	background-color: #19a413;
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 1rem;
+	color: #F3FAFF;
+	text-shadow: 1.5px 1.5px #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
 	border-radius: 10px;
 	margin-bottom: 20px;
 	max-width: 300px;
 	text-align: center;
+	border-top: 2px solid #F3FAFF;
+    border-right: 2px solid #F3FAFF;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
 }
 
 .recipe-description.section-recipe {
 	background-image: none;
-
 }
 
 .center-content {
 	display: flex;
 	justify-content: center;
-	/* Horizontal centering */
 	align-items: center;
-	/* Vertical centering */
 	height: 50px;
-	/* You can adjust the height as needed */
 }
 
 .description-content {
 	width: 100%;
-	background-image: url('../assets/blurry-gradient-haikei.svg');
+	max-width: 50dvw;
+	background-color: #19a413;
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin-bottom: 10px;
-}</style>
+	border-radius: 10px;
+	text-align: center;
+	text-shadow: 1.5px 1.5px #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #F3FAFF;
+	border-top: 2px solid #F3FAFF;
+    border-right: 2px solid #F3FAFF;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+</style>
