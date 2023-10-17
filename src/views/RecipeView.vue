@@ -48,7 +48,7 @@
 						@star-input="handleUserRating" />
 				</div>
 				<div v-else>
-					<p>Tack för din röst</p>
+					<p>Tack för din röst!</p>
 				</div>
 				<div>
 					<CommentSectionComponent />
