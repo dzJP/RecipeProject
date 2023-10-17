@@ -16,7 +16,7 @@
 
 			</div>
 			<!-- Submit Button -->
-			<button :disabled="formDisabled" type="submit" :title="formDisabled ? 'Please fill in all fields' : ''">
+			<button :disabled="formDisabled" type="submit" :title="formDisabled ? 'Var god och fyll i alla fält.' : ''">
 				Skicka
 			</button>
 		</form>
