@@ -183,8 +183,8 @@ export default {
 }
 
 .recipe-description .recipe-image {
-	width: 70dvw;
-	height: 40dvw;
+	width: 50dvw;
+	height: 30dvw;
 
 }
 

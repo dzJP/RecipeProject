@@ -6,6 +6,11 @@
                     <img :src="recipe.imageUrl" alt="Recipe Image" class="recipe-image" />
                 </div>
             </router-link>
+            <div class="button-container">
+                <div class="button-wrapper">
+                    <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
+                </div>
+            </div>
             <div class="recipe-details">
                 <div class="recipe-heading">
                     <div>
@@ -24,11 +29,6 @@
                     </div>
                     <div class="recipe-info-item">
                         Tid: {{ recipe.timeInMins }} mins
-                    </div>
-                </div>
-                <div class="button-container">
-                    <div class="button-wrapper">
-                        <CustomButton :to="'/recipe/' + recipe._id">Läs mer</CustomButton>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,6 @@ export default {
     justify-content: space-between;
 }
 
-
 .recipe-container {
     flex: 0 1 calc(33.33% - 20px);
     border: 1px solid #ccc;
@@ -75,14 +74,13 @@ export default {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 300px;
-    max-height: 500px;
     width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
+    position: relative;
 
+}
 
 .recipe-image img {
     width: 100%;
@@ -94,13 +92,13 @@ export default {
 .recipe-title {
     font-size: 1.2rem;
     margin: 10px 0;
-    font-family: Cambria, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .recipe-description {
     font-size: 1rem;
     margin: 10px 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     overflow: hidden;
     max-height: 3.6em;
     line-height: 1.2em;
@@ -128,15 +126,17 @@ export default {
 }
 
 .button-container {
-    align-self: flex-start;
-    margin-top: auto;
-    position: relative;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .button-wrapper {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .recipe-image {
@@ -146,16 +146,6 @@ export default {
     height: 200px;
     transition: transform 0.3s ease-in-out;
     border-radius: 9999px;
-}
-
-.recipe-image:hover {
-    transform: scale(1.1);
-}
-
-.img-container {
-    padding: 15px;
-    margin: 10px;
-    overflow: hidden;
 }
 
 .recipe-image {
