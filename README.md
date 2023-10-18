@@ -1,4 +1,5 @@
-# projektarbete
+# Welcome to our recipe project!
+# This project is created with the Vue framework. 
 
 ## Project setup
 ```
